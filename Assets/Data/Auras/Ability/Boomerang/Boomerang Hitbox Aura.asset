@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ae10f2e9449e42be00df9c9961e94, type: 3}
+  m_Name: Boomerang Hitbox Aura
+  m_EditorClassIdentifier: 
+  Name: Boomerang Hitbox
+  Description: 
+  MaxStack: 1
+  Hitbox: {fileID: 2552291843213621479, guid: 008b364f4159a864c8a3d0973521362a, type: 3}
+  AffectedAuras:
+  - {fileID: 11400000, guid: ba185d7955e963e4b930fb8472b307fd, type: 2}
+  OnHitTargetAuras:
+  - {fileID: 11400000, guid: 370ee4c2963166346b476207cb3416d5, type: 2}
+  - {fileID: 11400000, guid: fd58036d9edb696469b1d468c59f670b, type: 2}
+  OnHitSelfAuras:
+  - {fileID: 11400000, guid: 7b5dcb84a2c919243a2b12cb5bc34800, type: 2}
+  - {fileID: 11400000, guid: d78e8ceaacbb44e43a52b58b461bd51f, type: 2}
+  - {fileID: 11400000, guid: 8f7acab60b00ebb4194a24f823b0b8bf, type: 2}
+  - {fileID: 11400000, guid: 31dac99374ee19b469768ba7ca7791ff, type: 2}
+  - {fileID: 11400000, guid: 8a428a2fa674cdf438e9c65ca2eecc7c, type: 2}
+  OnLeaveTargetAuras: []
+  OnLeaveSelfAuras: []
+  RemoveOnHit: 0

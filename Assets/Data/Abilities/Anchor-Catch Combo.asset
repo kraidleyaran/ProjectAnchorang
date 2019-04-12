@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b581e018a8f1b948b5f09a764f09128, type: 3}
+  m_Name: Anchor-Catch Combo
+  m_EditorClassIdentifier: 
+  Name: Anchor-Catch Combo
+  Aura:
+  - {fileID: 11400000, guid: 0052b4eaf4dabf14da7964b186e93e09, type: 2}
+  - {fileID: 11400000, guid: ff8b2fa853e459241818feda2aba3690, type: 2}
+  - {fileID: 11400000, guid: 7ea73d20aa8ac924fb3103215dcb178f, type: 2}
+  - {fileID: 11400000, guid: 2dbd03e95cd343741a5352a26fa56406, type: 2}

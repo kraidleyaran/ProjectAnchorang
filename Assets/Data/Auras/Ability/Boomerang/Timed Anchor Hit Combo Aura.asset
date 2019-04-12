@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75608e2e0ed00de41a5439f93c224fa1, type: 3}
+  m_Name: Timed Anchor Hit Combo Aura
+  m_EditorClassIdentifier: 
+  Name: Anchor Hit Combo Timer
+  Description: 
+  MaxStack: 1
+  Aura: {fileID: 11400000, guid: ea3f3dd60ac35384c97fb6e9871c1203, type: 2}
+  Length: 0.5

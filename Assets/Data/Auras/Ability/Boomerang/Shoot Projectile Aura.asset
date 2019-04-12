@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a36c899529f91e46b099f16e4efb17e, type: 3}
+  m_Name: Shoot Projectile Aura
+  m_EditorClassIdentifier: 
+  Name: Shoot Boomerang
+  Description: 
+  MaxStack: 1
+  ProjectileAuras:
+  - {fileID: 11400000, guid: 70e51f6385a0b85498f8cb5d04d21d2b, type: 2}
+  - {fileID: 11400000, guid: d2d5998e1a56b2247b5f07720daf7afe, type: 2}
+  - {fileID: 11400000, guid: 84da79b40aac32c42b843f6df393ba31, type: 2}
+  - {fileID: 11400000, guid: 20aab5e4b0ebba8468def73becdd47af, type: 2}
+  - {fileID: 11400000, guid: 23466add88512574296fed2e29981d52, type: 2}
+  - {fileID: 11400000, guid: 960c9b149edba394d9813a369867909f, type: 2}
+  - {fileID: 11400000, guid: 88ca77c9ec99ab84e804e4f3916681d9, type: 2}
+  MaxProjectiles: 1

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b0b5552b11da16488de01eb8a3424e9, type: 3}
+  m_Name: Anchorang
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 21300066, guid: 1af8e9b680e4ee94bb500f43f808f45d, type: 3}
+  AnimatorController: {fileID: 9100000, guid: 8e242187cf4176345ad354aafcc139ee, type: 2}
+  UpRotation: 0
+  Hitbox: {fileID: 2552291843213621479, guid: 008b364f4159a864c8a3d0973521362a, type: 3}

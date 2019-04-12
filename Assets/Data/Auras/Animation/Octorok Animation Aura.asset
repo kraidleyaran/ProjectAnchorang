@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6abf8460fa69d489fc11223e4c17e3, type: 3}
+  m_Name: Octorok Animation Aura
+  m_EditorClassIdentifier: 
+  Name: Octorok Animation
+  Description: "\t\t"
+  MaxStack: 1
+  RuntimeController: {fileID: 9100000, guid: e83667cc2afbb674c807166a348c7006, type: 2}
+  SortingOrder: 0
+  DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+  Scale: {x: 4, y: 4}
