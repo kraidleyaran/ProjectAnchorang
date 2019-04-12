@@ -14,6 +14,7 @@ namespace Assets.Scripts.Auras
         public float BaseMaxSpeed;
         public float MaxDistance;
         public PhysicsBoxController PhysicsBox;
+        public bool AlwaysMoving;
 
 
         private float _acceleration { get; set; }
@@ -70,8 +71,11 @@ namespace Assets.Scripts.Auras
             }
             else if (_currentAcceleration > 0)
             {
-                _currentAcceleration = 0;
-                _controller.gameObject.SendMessageTo(new SetUnitAnimationStateMessage { State = UnitAnimationState.Idle }, _controller.transform.parent.gameObject);
+                if (!AlwaysMoving)
+                {
+                    _currentAcceleration = 0;
+                    _controller.gameObject.SendMessageTo(new SetUnitAnimationStateMessage { State = UnitAnimationState.Idle }, _controller.transform.parent.gameObject);
+                }
             }
         }
 

@@ -23,7 +23,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 f9970087a7e6cae4f51a6db2d6a25584 Assembly-CSharp.dll:CreativeSpore.SuperTilemapEditor.STETilemap
-5ad7238c40121f0c798721b65f2b5c6e Assembly-CSharp.dll:Assets.Scripts.Auras.MovementAura
+825495eb33aa577bd03e6271a453e517 Assembly-CSharp.dll:Assets.Scripts.Auras.MovementAura
 170e06166fe82a3bc1ffea89772ef463 Assembly-CSharp.dll:Assets.Scripts.Auras.TargetAimAura
 fa28f394c0e0d55a335ea3862441a4af Assembly-CSharp.dll:Assets.Scripts.Auras.CreateObjectAura
 f8283818df28383d530e99264624613a Assembly-CSharp.dll:Assets.Scripts.Abilities.Ability

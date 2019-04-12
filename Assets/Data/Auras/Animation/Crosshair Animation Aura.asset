@@ -18,4 +18,4 @@ MonoBehaviour:
   RuntimeController: {fileID: 9100000, guid: b1d4c571c6d95f947b8e8f61786ad5aa, type: 2}
   SortingOrder: -1
   DefaultColor: {r: 1, g: 0, b: 0, a: 1}
-  Scale: {x: 0.1, y: 0.1}
+  Scale: {x: 0.15, y: 0.15}
