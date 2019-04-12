@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e03d3b00905234481e36813cb5fe5b, type: 3}
+  m_Name: Boomerang On Max Distance Aura
+  m_EditorClassIdentifier: 
+  Name: Boomerang On Max Distance
+  Description: 
+  MaxStack: 1
+  ApplyOnMaxDistance:
+  - {fileID: 11400000, guid: 7b5dcb84a2c919243a2b12cb5bc34800, type: 2}
+  - {fileID: 11400000, guid: 8f7acab60b00ebb4194a24f823b0b8bf, type: 2}
+  - {fileID: 11400000, guid: 31dac99374ee19b469768ba7ca7791ff, type: 2}
+  - {fileID: 11400000, guid: c15cf9bf0c9b9694e88f703fd69b9b0e, type: 2}
+  - {fileID: 11400000, guid: d78e8ceaacbb44e43a52b58b461bd51f, type: 2}

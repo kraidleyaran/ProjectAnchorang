@@ -19,3 +19,4 @@ MonoBehaviour:
   BaseMaxSpeed: 10
   MaxDistance: 500
   PhysicsBox: {fileID: 0}
+  AlwaysMoving: 0
