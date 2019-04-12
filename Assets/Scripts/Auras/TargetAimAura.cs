@@ -75,7 +75,11 @@ namespace Assets.Scripts.Auras
             _hoverTarget = null;
             if (_lockedTarget)
             {
-                _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = LockedOnOutline}, _lockedTarget );
+                _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = LockedOnOutline }, _lockedTarget);
+            }
+            else
+            {
+                _controller.gameObject.SendMessageTo(new SetPositionMessage{Position = _controller.transform.position.ToVector2() + _aimDirection.normalized * Distance }, _targetReticule);
             }
         }
 

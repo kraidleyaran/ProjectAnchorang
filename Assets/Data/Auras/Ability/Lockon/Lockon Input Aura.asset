@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Lock On Target Input
   Description: 
   MaxStack: 1
-  Button: 2
+  Button: 5
   Ability: {fileID: 11400000, guid: a58a99dba4e4aae4d91965e9cc1ad2f4, type: 2}

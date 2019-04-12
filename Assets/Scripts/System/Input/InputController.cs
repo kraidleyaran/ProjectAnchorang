@@ -68,6 +68,12 @@ public class InputController : MonoBehaviour
             currentState.Buttons.Add(GameInputButton.X);
         }
 
+        if (Input.GetButton(StaticInputAxesStrings.RIGHT_BUMPER))
+        {
+            currentState.Buttons.Add(GameInputButton.RightBumper);
+        }
+
+
         gameObject.SendMessage(new InputStateMessage{PreviousState = _previousState, CurrentState = currentState});
         //foreach (var obj in _registeredInputObjects)
         //{

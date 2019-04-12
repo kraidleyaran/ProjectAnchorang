@@ -299,6 +299,11 @@ namespace Assets.Scripts.System
         public float LengthBetweenFlashes { get; set; }
     }
 
+    public class MaxDistanceReachedMessage : EventMessage
+    {
+
+    }
+
     
     
 }

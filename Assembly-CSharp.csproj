@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\Auras\LockOnTargetAura.cs" />
     <Compile Include="Assets\Scripts\Auras\MoveCameraAura.cs" />
     <Compile Include="Assets\Scripts\Auras\MovementAura.cs" />
+    <Compile Include="Assets\Scripts\Auras\OnMaxDistanceAura.cs" />
     <Compile Include="Assets\Scripts\Auras\OutlineAura.cs" />
     <Compile Include="Assets\Scripts\Auras\OwnershipAura.cs" />
     <Compile Include="Assets\Scripts\Auras\RemoveAuraCooldownAura.cs" />

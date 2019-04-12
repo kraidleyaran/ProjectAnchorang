@@ -17,3 +17,4 @@ MonoBehaviour:
   MaxStack: 1
   AurasToRemove:
   - {fileID: 11400000, guid: ea3f3dd60ac35384c97fb6e9871c1203, type: 2}
+  - {fileID: 11400000, guid: 370ee4c2963166346b476207cb3416d5, type: 2}

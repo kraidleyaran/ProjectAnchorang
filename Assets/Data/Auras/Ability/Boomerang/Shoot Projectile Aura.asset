@@ -23,4 +23,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23466add88512574296fed2e29981d52, type: 2}
   - {fileID: 11400000, guid: 960c9b149edba394d9813a369867909f, type: 2}
   - {fileID: 11400000, guid: 88ca77c9ec99ab84e804e4f3916681d9, type: 2}
+  - {fileID: 11400000, guid: 208ad46c4d6a8af41b3a785a3fbbab0f, type: 2}
   MaxProjectiles: 1

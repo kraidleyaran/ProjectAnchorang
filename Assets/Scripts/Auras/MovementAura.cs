@@ -62,8 +62,9 @@ namespace Assets.Scripts.Auras
                 }
                 else
                 {
-                    _setDirection = Vector2.zero;
-                    _controller.gameObject.SendMessageTo(new ObjectHitMessage(), _controller.transform.parent.gameObject);
+                    //_setDirection = Vector2.zero;
+                    _controller.gameObject.SendMessageTo(new MaxDistanceReachedMessage(), _controller.transform.parent.gameObject);
+                    //_controller.gameObject.SendMessageTo(new ObjectHitMessage(), _controller.transform.parent.gameObject);
                     //_controller.gameObject.SendMessageTo(new DestinationReachedMessage(), _controller.transform.parent.gameObject);
                 }
             }

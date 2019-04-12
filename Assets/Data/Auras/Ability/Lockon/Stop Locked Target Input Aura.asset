@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Stop Locked Target Input
   Description: 
   MaxStack: 1
-  Button: 2
+  Button: 5
   Ability: {fileID: 11400000, guid: 557f69ed809ad0f46aac1a55bcd3b069, type: 2}

@@ -20,3 +20,4 @@ MonoBehaviour:
   OnReturnOwnerAuras:
   - {fileID: 11400000, guid: d12997c7b4b8849488b24a4925fbeec2, type: 2}
   - {fileID: 11400000, guid: 35118cd2cc1f427418b441cdc3adec53, type: 2}
+  - {fileID: 11400000, guid: 6e5ca776225c65d4e9a7eaaa4fec901b, type: 2}
