@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75608e2e0ed00de41a5439f93c224fa1, type: 3}
   m_Name: Timed Remove Hit Indicator Aura
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Remove Hit Indicator
   Description: 
   MaxStack: 1
   Aura: {fileID: 11400000, guid: 4caed5b43bb770344a71c751b6401ed4, type: 2}

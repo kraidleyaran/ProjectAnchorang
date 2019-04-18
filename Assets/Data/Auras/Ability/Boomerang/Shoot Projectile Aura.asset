@@ -25,3 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88ca77c9ec99ab84e804e4f3916681d9, type: 2}
   - {fileID: 11400000, guid: 208ad46c4d6a8af41b3a785a3fbbab0f, type: 2}
   MaxProjectiles: 1
+  DistanceInFrontOfPlayer: 0.6

@@ -8,10 +8,11 @@ public class SpriteOutline : MonoBehaviour {
     public int outlineSize = 1;
 
     private SpriteRenderer spriteRenderer;
+    //TODO: Implement MeshRenderer to allow for multiple materials
+    //private MeshRenderer meshRenderer;
 
     void OnEnable() {
         spriteRenderer = transform.gameObject.GetComponent<SpriteRenderer>();
-
         UpdateOutline(true);
     }
 

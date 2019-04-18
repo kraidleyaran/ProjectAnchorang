@@ -15,6 +15,7 @@ public class UnitAnimationController : MonoBehaviour
     private UnitAnimationState _currentAnimationState { get; set; }
     private SpriteOutline _outline { get; set; }
     private Tween _flashTween { get; set; }
+    private bool _locked { get; set; }
 
     void Awake()
     {
@@ -27,6 +28,21 @@ public class UnitAnimationController : MonoBehaviour
         }
     }
 
+    public void SetAnimationState(float animationState)
+    {
+        gameObject.SendMessageTo(new SetUnitAnimationStateMessage{State = (UnitAnimationState)animationState}, transform.parent.gameObject);
+    }
+
+    public void OnDemandEvent(string eventName)
+    {
+        gameObject.SendMessageTo(new OnDemandEventMessage{EventName = eventName}, transform.parent.gameObject);
+    }
+
+    public void Unlock()
+    {
+        _locked = false;
+    }
+
     private void SubscribeToMessages()
     {
         //transform.parent.gameObject.Subscribe<SetFacingDirectionMessage>(SetFacingDirection);
@@ -35,6 +51,7 @@ public class UnitAnimationController : MonoBehaviour
         transform.parent.gameObject.Subscribe<AimDirectionMessage>(AimDirection);
         transform.parent.gameObject.Subscribe<SetOutlineMessage>(SetOutline);
         transform.parent.gameObject.Subscribe<ApplyFlashColorEffectMessage>(ApplyFlashColorEffect);
+        transform.parent.gameObject.Subscribe<LockAnimationStateMessage>(LockAnimationState);
     }
 
     private Tween ChangeToColor(Color color, float time)
@@ -44,7 +61,7 @@ public class UnitAnimationController : MonoBehaviour
 
     private void AimDirection(AimDirectionMessage msg)
     {
-        if (msg.Direction != Vector2.zero)
+        if (msg.Direction != Vector2.zero && !_locked)
         {
             var naturalDirection = msg.Direction.NatrualValues();
             var animatedDirection = Vector2.zero;
@@ -64,8 +81,11 @@ public class UnitAnimationController : MonoBehaviour
                 {
                     SpriteRenderer.flipX = animatedDirection.x < 0;
                 }
+                
                 _animator.SetFloat(StaticAnimationParameterStrings.X, animatedDirection.x);
                 _animator.SetFloat(StaticAnimationParameterStrings.Y, animatedDirection.y);
+
+
             }
         }
     }
@@ -74,7 +94,7 @@ public class UnitAnimationController : MonoBehaviour
     //TODO: Remove when we're sure facing direction is no longer needed - replaced by Aim Direction
     private void SetFacingDirection(SetFacingDirectionMessage msg)
     {
-        if (msg.Direction != Vector2.zero)
+        if (msg.Direction != Vector2.zero && !_locked)
         {
             var naturalDirection = msg.Direction.NatrualValues();
             var animatedDirection = Vector2.zero;
@@ -102,11 +122,13 @@ public class UnitAnimationController : MonoBehaviour
 
     private void SetUnitAnimationState(SetUnitAnimationStateMessage msg)
     {
-        if (_currentAnimationState != msg.State)
+        if (_currentAnimationState != msg.State && !_locked)
         {
-            _animator.SetInteger(StaticAnimationParameterStrings.UNIT_ANIMATION_STATE, (int)msg.State);
+            _animator.SetFloat(StaticAnimationParameterStrings.UNIT_ANIMATION_STATE, (float)msg.State);
+            //TODO: Replace with a string constant
+            _animator.Play("Main Tree", 0, 0f);
+            _currentAnimationState = msg.State;
         }
-        _currentAnimationState = msg.State;
     }
 
     private void SetUnitRuntimeAnimator(SetUnitRuntimeAnimatorMessage msg)
@@ -122,6 +144,7 @@ public class UnitAnimationController : MonoBehaviour
 
     private void ApplyFlashColorEffect(ApplyFlashColorEffectMessage msg)
     {
+        //TODO: Replace with shader when Mesh Renderers are implemented
         if (_flashTween != null)
         {
             _flashTween.Kill(true);
@@ -148,6 +171,11 @@ public class UnitAnimationController : MonoBehaviour
             _flashTween = null;
         });
         _flashTween = colorTween;
+    }
+
+    private void LockAnimationState(LockAnimationStateMessage msg)
+    {
+        _locked = msg.Locked;
     }
 
 

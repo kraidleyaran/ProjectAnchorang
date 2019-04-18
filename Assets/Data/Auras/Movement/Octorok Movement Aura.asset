@@ -15,8 +15,9 @@ MonoBehaviour:
   Name: Octorok Movement Aura
   Description: 
   MaxStack: 1
-  BaseAcceleration: 0
-  BaseMaxSpeed: 0
-  MaxDistance: 0
+  MovementInfo:
+    Acceleration: 2
+    MaxSpeed: 10
+    MaxDistance: 0
   PhysicsBox: {fileID: 0}
   AlwaysMoving: 1

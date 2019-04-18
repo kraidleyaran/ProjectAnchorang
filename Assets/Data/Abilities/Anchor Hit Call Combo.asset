@@ -16,7 +16,6 @@ MonoBehaviour:
   Aura:
   - {fileID: 11400000, guid: 8f7acab60b00ebb4194a24f823b0b8bf, type: 2}
   - {fileID: 11400000, guid: 31dac99374ee19b469768ba7ca7791ff, type: 2}
-  - {fileID: 11400000, guid: e993f1a646873984d943410452204006, type: 2}
-  - {fileID: 11400000, guid: 9b7148e6111918d4cb30e9a7840ad20e, type: 2}
+  - {fileID: 11400000, guid: 830a132a7bbe2f445bda6a53507ea8b5, type: 2}
   - {fileID: 11400000, guid: f236b4f5a265b734bad4f99c0ddedfbd, type: 2}
   - {fileID: 11400000, guid: f10e511660ca49349b2ba98f3300f635, type: 2}

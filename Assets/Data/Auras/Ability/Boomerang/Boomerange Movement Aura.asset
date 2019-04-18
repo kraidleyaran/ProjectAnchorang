@@ -15,8 +15,9 @@ MonoBehaviour:
   Name: Boomerang Movement
   Description: 
   MaxStack: 1
-  BaseAcceleration: 2
-  BaseMaxSpeed: 10
-  MaxDistance: 500
+  MovementInfo:
+    Acceleration: 2
+    MaxSpeed: 12
+    MaxDistance: 0
   PhysicsBox: {fileID: 0}
   AlwaysMoving: 0

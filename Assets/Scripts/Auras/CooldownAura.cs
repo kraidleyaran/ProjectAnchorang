@@ -47,7 +47,6 @@ namespace Assets.Scripts.Auras
                             _controller.gameObject.SendMessageTo(new RemoveAuraCooldownMessage{Aura = msg.Aura}, _controller.transform.parent.gameObject);
                         });
             }
-            Debug.Log($"{_controller.transform.parent.gameObject} has gained a cooldown for {msg.Aura.Name}");
             _cooldowns.Add(currentCooldown);
         }
 

@@ -78,8 +78,7 @@ namespace Assets.Scripts.System
 
     public class MovementInfoMessage : EventMessage
     {
-        public float Accleration { get; set; }
-        public float MaxSpeed { get; set; }
+        public MovementInfo MovementInfo { get; set; }
     }
 
 
@@ -111,7 +110,7 @@ namespace Assets.Scripts.System
 
     public class SetMaxDistanceMessage : EventMessage
     {
-        public float? MaxDistance { get; set; }
+        public float MaxDistance { get; set; }
     }
 
     public class ResetMovementSpeedMessage : EventMessage
@@ -256,6 +255,12 @@ namespace Assets.Scripts.System
         public AdjustmentType AdjustmentType { get; set; }
     }
 
+    public class AdjustMovementValueMessage : EventMessage
+    {
+        public float Amount { get; set; }
+        public MovementValueType MovementValueType { get; set; }
+    }
+
     public class SetPositionMessage : EventMessage
     {
         public Vector2 Position { get; set; }
@@ -304,7 +309,14 @@ namespace Assets.Scripts.System
 
     }
 
-    
-    
+    public class OnDemandEventMessage : EventMessage
+    {
+        public string EventName { get; set; }
+    }
+
+    public class LockAnimationStateMessage : EventMessage
+    {
+        public bool Locked { get; set; }
+    }
 }
 
