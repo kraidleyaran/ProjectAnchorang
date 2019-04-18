@@ -21,11 +21,13 @@ MonoBehaviour:
   OnHitTargetAuras: []
   OnHitSelfAuras:
   - {fileID: 11400000, guid: 7b5dcb84a2c919243a2b12cb5bc34800, type: 2}
+  - {fileID: 11400000, guid: 31160dc61c0e0f74890580635f2f661e, type: 2}
   - {fileID: 11400000, guid: 8f7acab60b00ebb4194a24f823b0b8bf, type: 2}
   - {fileID: 11400000, guid: 31dac99374ee19b469768ba7ca7791ff, type: 2}
   - {fileID: 11400000, guid: d78e8ceaacbb44e43a52b58b461bd51f, type: 2}
-  - {fileID: 11400000, guid: c15cf9bf0c9b9694e88f703fd69b9b0e, type: 2}
+  - {fileID: 11400000, guid: 1b68d38b02e0d254c95262198df56366, type: 2}
   - {fileID: 11400000, guid: 21e409e9fa74694408d329456ee0bf27, type: 2}
+  - {fileID: 11400000, guid: 742692d846fb806418bd557182fa325e, type: 2}
   OnLeaveTargetAuras: []
   OnLeaveSelfAuras: []
   RemoveOnHit: 0

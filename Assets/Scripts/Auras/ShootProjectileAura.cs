@@ -12,6 +12,7 @@ namespace Assets.Scripts.Auras
         [Header("Shoot Projectile Aura Settings")]
         public List<Aura> ProjectileAuras;
         public int MaxProjectiles = 1;
+        public float DistanceInFrontOfPlayer = .5f;
 
         private List<UnitController> _projectiles { get; set; }
         private Sequence _timeBetweenProjectiles { get; set; }
@@ -32,7 +33,9 @@ namespace Assets.Scripts.Auras
             {
                 if (_timeBetweenProjectiles == null)
                 {
-                    var projectile = Instantiate(FactoryController.UNIT, _controller.transform.position, Quaternion.identity);
+                    var position = _controller.transform.position.ToVector2();
+                    position += Vector2.ClampMagnitude(_aimDireciton * DistanceInFrontOfPlayer, DistanceInFrontOfPlayer);
+                    var projectile = Instantiate(FactoryController.UNIT, position, Quaternion.identity);
                     foreach (var aura in ProjectileAuras)
                     {
                         _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = aura }, projectile.gameObject);

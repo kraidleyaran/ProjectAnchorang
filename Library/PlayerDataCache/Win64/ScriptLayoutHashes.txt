@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-F:/Project Tidehunter/Project Anchorang.exe
+F:/Project Anchorang/Project Anchorang.exe
 SceneListBegin?
 Assets/Scenes/Game.unity
 SceneListEnd?
@@ -23,7 +23,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 f9970087a7e6cae4f51a6db2d6a25584 Assembly-CSharp.dll:CreativeSpore.SuperTilemapEditor.STETilemap
-825495eb33aa577bd03e6271a453e517 Assembly-CSharp.dll:Assets.Scripts.Auras.MovementAura
+fe520cc7431d55830f91645627e6248f Assembly-CSharp.dll:Assets.Scripts.Auras.MovementAura
 170e06166fe82a3bc1ffea89772ef463 Assembly-CSharp.dll:Assets.Scripts.Auras.TargetAimAura
 fa28f394c0e0d55a335ea3862441a4af Assembly-CSharp.dll:Assets.Scripts.Auras.CreateObjectAura
 f8283818df28383d530e99264624613a Assembly-CSharp.dll:Assets.Scripts.Abilities.Ability
@@ -119,6 +119,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 00274a21279f5cb831ce20f895049e38 Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
+0f3c02ad5816e0fdc53b5252e32bc0a5 Assembly-CSharp.dll:Assets.Scripts.Auras.AdjustMovementValueAura
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -223,10 +224,12 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 0e1127fdc576dee9c2cf794689072913 Assembly-CSharp.dll:.PlayerDebugController
 42457f4596a927afba27c7797119957c Assembly-CSharp.dll:CubesTeam.PyxelEdit
 0860bc186e19197a919bd2efcf7240f7 Assembly-CSharp.dll:Assets.Scripts.Auras.TargetReticleAura
+5c441bade0daee55385a214c505bacbb Assembly-CSharp.dll:Assets.Scripts.Auras.AnimationStateAura
 f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.MoveCameraAura
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.SoundController
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
+2b470a59dc4a48ac8910dfcfb7b547bf Assembly-CSharp.dll:Assets.Scripts.Auras.OnDemandActionAura
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -259,7 +262,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-daf19df25b26046bc83526cb593650ef Assembly-CSharp.dll:Assets.Scripts.Auras.ShootProjectileAura
+7e7f3ff21a8f1ea78796acb608e96d50 Assembly-CSharp.dll:Assets.Scripts.Auras.ShootProjectileAura
 f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.LockOnTargetAura
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 9f7c95ae065ee74850d5c50efa2db431 Assembly-CSharp.dll:Assets.Scripts.Auras.ApplyToAnchorangProjectileAura
@@ -281,6 +284,7 @@ f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.Destro
 fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 5b0391b7e3d9ea9db6c0a8fbd0ca23f6 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+f60878c64599208ae8bf7d6759822cef Assembly-CSharp.dll:Assets.Scripts.Auras.OnMaxDistanceAura
 874e33b197c00b6ddbac7df6fc88dd6c Assembly-CSharp.dll:CreativeSpore.SuperTilemapEditor.Tileset
 c89f4fffe847dfba8e9cc4050b07f96f Assembly-CSharp.dll:Assets.Scripts.Auras.ColorChangeEffectAura
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.CameraController
@@ -381,4 +385,4 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-f60878c64599208ae8bf7d6759822cef Assembly-CSharp.dll:Assets.Scripts.Auras.OnMaxDistanceAura
+f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.LockAnimationStateAura

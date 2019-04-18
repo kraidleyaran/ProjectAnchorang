@@ -3,6 +3,7 @@ using Assets.Scripts.Auras;
 using Assets.Scripts.System;
 using MessageBusLib;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DevTool : MonoBehaviour
@@ -40,6 +41,11 @@ public class DevTool : MonoBehaviour
         }
     }
 
+    public void ResetButton()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     private void SubscribeToMessages()
     {
         if (LogJoystickInput)
@@ -50,8 +56,13 @@ public class DevTool : MonoBehaviour
 
     private void InputState(InputStateMessage msg)
     {
-        LeftStickText.text = $"Left Stick {msg.CurrentState.LeftStick.x}, {msg.CurrentState.LeftStick.y}";
-        RightStickText.text = $"Right Stick {msg.CurrentState.RightStick.x}, {msg.CurrentState.RightStick.y}";
+        //LeftStickText.text = $"Left Stick {msg.CurrentState.LeftStick.x}, {msg.CurrentState.LeftStick.y}";
+        //RightStickText.text = $"Right Stick {msg.CurrentState.RightStick.x}, {msg.CurrentState.RightStick.y}";
+    }
+
+    void OnDestroy()
+    {
+        gameObject.UnsubscribeFromAllMessages();
     }
 
 }

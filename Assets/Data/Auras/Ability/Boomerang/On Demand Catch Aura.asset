@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e95da3a717319c84990d853f848554a1, type: 3}
+  m_Name: On Demand Catch Aura
+  m_EditorClassIdentifier: 
+  Name: On Demand Catch
+  Description: 
+  MaxStack: 1
+  AurasToApply:
+  - {fileID: 11400000, guid: 4b7f204519fda524cb130c13fc8b3fe8, type: 2}
+  OnDemandEventName: Catch

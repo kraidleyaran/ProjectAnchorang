@@ -10,21 +10,13 @@ namespace Assets.Scripts.Auras
     public class MovementAura : Aura
     {
         [Header("Movement Aura Settings")]
-        public float BaseAcceleration;
-        public float BaseMaxSpeed;
-        public float MaxDistance;
+        public MovementInfo MovementInfo;
         public PhysicsBoxController PhysicsBox;
         public bool AlwaysMoving;
 
-
-        private float _acceleration { get; set; }
-        private float _maxSpeed { get; set; }
-
         private Rigidbody2D _rigidBody { get; set; }
-        //private Vector2 _movingDirection { get; set; }
         private Vector2 _setDirection { get; set; }
         private float _currentAcceleration { get; set; }
-        private float? _maxDistance { get; set; }
         private float _currentDistance { get; set; }
         private Transform _target { get; set; }
         private Action _onDestinationReached { get; set; }
@@ -40,26 +32,33 @@ namespace Assets.Scripts.Auras
                         _controller.transform.gameObject.SendMessageTo(new ObjectHitMessage { ObjectHit = _target.gameObject }, _controller.transform.parent.gameObject);
                         return;
                     }
+                    
+                    
                     var direction = (_target.position.ToVector2() - _rigidBody.position).normalized;
                     _setDirection = direction;
                 }
-                if (!_maxDistance.HasValue || _currentDistance < _maxDistance)
+                if (MovementInfo.MaxDistance <= 0 || _currentDistance < MovementInfo.MaxDistance)
                 {
-                    _currentAcceleration += _acceleration;
-                    if (_currentAcceleration > _maxSpeed)
+                    _currentAcceleration += MovementInfo.Acceleration;
+                    if (_currentAcceleration > MovementInfo.MaxSpeed)
                     {
-                        _currentAcceleration = _maxSpeed;
+                        _currentAcceleration = MovementInfo.MaxSpeed;
                     }
                     var position = _rigidBody.position;
                     var acceleration = _currentAcceleration * Time.fixedDeltaTime;
-                    //position += Vector2.ClampMagnitude(_setDirection * acceleration,acceleration);
-                    position += acceleration * _setDirection;
-                    if (_maxDistance.HasValue)
+                    if (acceleration > 0 || acceleration < 0)
                     {
-                        _currentDistance += acceleration;
+                        position += acceleration * _setDirection;
+                        if (MovementInfo.MaxDistance > 0)
+                        {
+                            _currentDistance += acceleration;
+                        }
+                        //position += Vector2.ClampMagnitude(_setDirection * acceleration,acceleration);
+                        _rigidBody.MovePosition(position);
+                        _controller.gameObject.SendMessageTo(new SetUnitAnimationStateMessage { State = UnitAnimationState.Moving }, _controller.transform.parent.gameObject);
+                        
                     }
-                    _rigidBody.MovePosition(position);
-                    _controller.gameObject.SendMessageTo(new SetUnitAnimationStateMessage { State = UnitAnimationState.Moving }, _controller.transform.parent.gameObject);
+
                 }
                 else
                 {
@@ -86,13 +85,8 @@ namespace Assets.Scripts.Auras
             {
                 Instantiate(PhysicsBox, controller.transform.parent);
             }
-            _acceleration = BaseAcceleration;
-            _maxSpeed = BaseMaxSpeed;
+            
             _rigidBody = controller.transform.parent.gameObject.GetComponent<Rigidbody2D>();
-            if (MaxDistance > 0)
-            {
-                _maxDistance = MaxDistance * Time.deltaTime;
-            }
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetMovementDirectionMessage>(SetMovementDirection, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<RequestMovementInfoMessage>(RequestMovementInfo, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetAccelerationMessage>(SetAcceleration, _instanceId);
@@ -101,10 +95,9 @@ namespace Assets.Scripts.Auras
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetMaxDistanceMessage>(SetMaxDistance, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetTargetDestinationMessage>(SetTargetDestination, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<DestinationReachedMessage>(DestinationReached, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<AdjustAccelerationMessage>(AdjustAcceleration, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<AdjustMaxSpeedMessage>(AdjustMaxSpeed, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetPositionMessage>(SetPosition, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetRelativePositionMessage>(SetRelativePosition, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<AdjustMovementValueMessage>(AdjustMovementValue, _instanceId);
         }
 
         private void SetMovementDirection(SetMovementDirectionMessage msg)
@@ -114,17 +107,17 @@ namespace Assets.Scripts.Auras
 
         private void RequestMovementInfo(RequestMovementInfoMessage msg)
         {
-            _controller.gameObject.SendMessageTo(new MovementInfoMessage { Accleration = _acceleration, MaxSpeed = _maxSpeed }, msg.Sender);
+            _controller.gameObject.SendMessageTo(new MovementInfoMessage { MovementInfo = MovementInfo}, msg.Sender);
         }
 
         private void SetAcceleration(SetAccelerationMessage msg)
         {
-            _acceleration = msg.Acceleration;
+            MovementInfo.Acceleration = msg.Acceleration;
         }
 
         private void SetMaxSpeed(SetMaxSpeedMessage msg)
         {
-            _maxSpeed = msg.MaxSpeed;
+            MovementInfo.MaxSpeed = msg.MaxSpeed;
         }
 
         private void ResetMovementSpeed(ResetMovementSpeedMessage msg)
@@ -134,14 +127,14 @@ namespace Assets.Scripts.Auras
 
         private void SetMaxDistance(SetMaxDistanceMessage msg)
         {
-            _maxDistance = msg.MaxDistance * Time.fixedDeltaTime;
+            MovementInfo.MaxDistance = msg.MaxDistance * Time.fixedDeltaTime;
             _currentDistance = 0;
         }
 
         private void SetTargetDestination(SetTargetDestinationMessage msg)
         {
             _target = msg.Target.transform;
-            _maxDistance = null;
+            MovementInfo.MaxDistance = 0f;
             _currentDistance = 0f;
             _setDirection = Vector2.zero;
             _onDestinationReached = msg.OnDestinationReached;
@@ -153,24 +146,9 @@ namespace Assets.Scripts.Auras
             _onDestinationReached?.Invoke();
         }
 
-        private void AdjustAcceleration(AdjustAccelerationMessage msg)
+        private void AdjustMovementValue(AdjustMovementValueMessage msg)
         {
-            var amount = msg.Amount;
-            if (msg.AdjustmentType == AdjustmentType.Multiplier)
-            {
-                amount = _acceleration + (_acceleration * msg.Amount);
-            }
-            _acceleration += amount;
-        }
-
-        private void AdjustMaxSpeed(AdjustMaxSpeedMessage msg)
-        {
-            var amount = msg.Amount;
-            if (msg.AdjustmentType == AdjustmentType.Multiplier)
-            {
-                amount = _maxSpeed + (_maxSpeed * msg.Amount);
-            }
-            _maxSpeed += amount;
+            MovementInfo.SetValue(msg.MovementValueType, msg.Amount);
         }
 
         private void SetPosition(SetPositionMessage msg)
@@ -195,10 +173,9 @@ namespace Assets.Scripts.Auras
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetMaxDistanceMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetTargetDestinationMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<DestinationReachedMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<AdjustAccelerationMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<AdjustMaxSpeedMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetPositionMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetRelativePositionMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<AdjustMovementValueMessage>(_instanceId);
         }
     }
 }

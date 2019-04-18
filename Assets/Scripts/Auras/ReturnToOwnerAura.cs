@@ -39,13 +39,13 @@ namespace Assets.Scripts.Auras
         {
             if (_owner && _owner == msg.ObjectHit)
             {
-                foreach (var aura in OnReturnOwnerAuras)
-                {
-                    _controller.transform.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _owner);
-                }
                 foreach (var aura in OnReturnSelfAuras)
                 {
                     _controller.transform.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _controller.transform.parent.gameObject);
+                }
+                foreach (var aura in OnReturnOwnerAuras)
+                {
+                    _controller.transform.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = aura }, _owner);
                 }
                 _controller.gameObject.SendMessageTo(new RemoveAuraByControllerFromObjectMessage { Controller = _controller }, _controller.transform.parent.gameObject);
             }

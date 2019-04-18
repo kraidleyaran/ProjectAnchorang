@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Slow Down Boomerang
   Description: 
   MaxStack: 1
-  Aura: {fileID: 11400000, guid: 212f6b3587965a541a8b460d5e2f92bf, type: 2}
+  Aura: {fileID: 11400000, guid: fe30c5f138ed9f64f870cf099fa809ab, type: 2}
   Length: 1
