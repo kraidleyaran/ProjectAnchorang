@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: 
   MaxStack: 1
   Aura: {fileID: 11400000, guid: c7cd94e714d591e409f7a9f362eecc48, type: 2}
-  Length: 0.3
+  Length: 0.4

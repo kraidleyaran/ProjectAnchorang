@@ -223,6 +223,7 @@ f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.InputC
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 0e1127fdc576dee9c2cf794689072913 Assembly-CSharp.dll:.PlayerDebugController
 42457f4596a927afba27c7797119957c Assembly-CSharp.dll:CubesTeam.PyxelEdit
+f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.LockAnimationStateAura
 0860bc186e19197a919bd2efcf7240f7 Assembly-CSharp.dll:Assets.Scripts.Auras.TargetReticleAura
 5c441bade0daee55385a214c505bacbb Assembly-CSharp.dll:Assets.Scripts.Auras.AnimationStateAura
 f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.MoveCameraAura
@@ -385,4 +386,3 @@ cd67f3e1e9ccac6db86c1564cea5a827 Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
-f12fca92a7ccc4431182dd27c2289383 Assembly-CSharp.dll:Assets.Scripts.Auras.LockAnimationStateAura
