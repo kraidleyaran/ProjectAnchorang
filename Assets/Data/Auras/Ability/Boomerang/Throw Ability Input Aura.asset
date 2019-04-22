@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Throw Boomerang
   Description: 
   MaxStack: 1
+  DebugAura: 0
   Button: 7
   Ability: {fileID: 11400000, guid: c48d2c2d3c427924bafd994632b446ea, type: 2}

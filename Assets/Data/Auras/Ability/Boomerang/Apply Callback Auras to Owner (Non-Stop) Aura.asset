@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: 'Apply Callback Auras To Owner '
   Description: 
   MaxStack: 1
+  DebugAura: 0
   AurasToApply:
-  - {fileID: 11400000, guid: 551fd04e62725144c9c4e2d038110ae9, type: 2}
   - {fileID: 11400000, guid: d964f93517db04146ad0fde926acfc19, type: 2}

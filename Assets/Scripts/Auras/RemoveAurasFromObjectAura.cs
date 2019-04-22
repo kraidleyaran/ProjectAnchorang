@@ -13,6 +13,10 @@ namespace Assets.Scripts.Auras
 
         public override void SubscribeController(AuraController controller)
         {
+            if (DebugAura)
+            {
+                Debug.Break();
+            }
             base.SubscribeController(controller);
             foreach (var aura in AurasToRemove)
             {

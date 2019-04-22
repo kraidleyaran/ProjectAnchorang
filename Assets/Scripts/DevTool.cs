@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Auras;
 using Assets.Scripts.System;
+using Assets.Scripts.System.Input;
 using MessageBusLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,17 +22,25 @@ public class DevTool : MonoBehaviour
     public Text LeftStickText;
     public Text RightStickText;
 
+    [Header("Color Change Debug")]
+    public Color StartColor;
+    public Color SwapColor;
+
+    private Color _currentColor { get; set; }
+    private UnitController _player { get; set; }
+
     void Awake()
     {
         SubscribeToMessages();
+        _currentColor = StartColor;
     }
 
     void Start()
     {
-        var player = Instantiate(FactoryController.UNIT, StartingPosition.position, Quaternion.identity);
+        _player = Instantiate(FactoryController.UNIT, StartingPosition.position, Quaternion.identity);
         foreach (var aura in Auras)
         {
-            gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, player.gameObject);
+            gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _player.gameObject);
         }
 
         var enemy = Instantiate(FactoryController.UNIT, EnemyStartingPosition.position, Quaternion.identity);
@@ -46,6 +55,17 @@ public class DevTool : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SwapColors()
+    {
+        var color = SwapColor;
+        if (_currentColor != StartColor)
+        {
+            color = StartColor;
+        }
+        gameObject.SendMessageTo(new ChangeSpriteColorMessage{FromColor = _currentColor, ToColor = color}, _player.gameObject);
+        _currentColor = color;
+    }
+
     private void SubscribeToMessages()
     {
         if (LogJoystickInput)
@@ -58,6 +78,10 @@ public class DevTool : MonoBehaviour
     {
         //LeftStickText.text = $"Left Stick {msg.CurrentState.LeftStick.x}, {msg.CurrentState.LeftStick.y}";
         //RightStickText.text = $"Right Stick {msg.CurrentState.RightStick.x}, {msg.CurrentState.RightStick.y}";
+        if (!msg.PreviousState.Buttons.Contains(GameInputButton.Menu) && msg.CurrentState.Buttons.Contains(GameInputButton.Menu))
+        {
+            //Debug.Break();
+        }
     }
 
     void OnDestroy()

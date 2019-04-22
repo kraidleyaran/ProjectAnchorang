@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Animation;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Assets.Scripts.Animation;
 using Assets.Scripts.System;
 using DG.Tweening;
 using MessageBusLib;
@@ -8,6 +10,8 @@ public class UnitAnimationController : MonoBehaviour
 {
     [Header("Settings")]
     public bool FlipSpriteX;
+    public List<Material> SpriteMats;
+    public Material ColorChangeMaterial;
 
     public SpriteRenderer SpriteRenderer { get; set; }
 
@@ -19,13 +23,24 @@ public class UnitAnimationController : MonoBehaviour
 
     void Awake()
     {
-        _animator = transform.GetComponent<Animator>();
         SpriteRenderer = transform.GetComponent<SpriteRenderer>();
+        _animator = transform.GetComponent<Animator>();
         _outline = transform.GetComponent<SpriteOutline>();
         if (_animator && SpriteRenderer)
         {
             SubscribeToMessages();
         }
+        //We have to do this because using a Mesh Renderer makes the animations not work, but a sprite renderer only holds a single Material in the inspector
+        //So we instantiate the mats ourselves and attach them as needed
+        var spriteMats = new List<Material>();
+        foreach (var mat in SpriteMats)
+
+        {
+            var material = Instantiate(mat);
+            material.name = mat.name;
+            spriteMats.Add(mat);
+        }
+        SpriteRenderer.materials = spriteMats.ToArray();
     }
 
     public void SetAnimationState(float animationState)
@@ -45,13 +60,14 @@ public class UnitAnimationController : MonoBehaviour
 
     private void SubscribeToMessages()
     {
-        //transform.parent.gameObject.Subscribe<SetFacingDirectionMessage>(SetFacingDirection);
         transform.parent.gameObject.Subscribe<SetUnitAnimationStateMessage>(SetUnitAnimationState);
         transform.parent.gameObject.Subscribe<SetUnitRuntimeAnimatorMessage>(SetUnitRuntimeAnimator);
         transform.parent.gameObject.Subscribe<AimDirectionMessage>(AimDirection);
         transform.parent.gameObject.Subscribe<SetOutlineMessage>(SetOutline);
         transform.parent.gameObject.Subscribe<ApplyFlashColorEffectMessage>(ApplyFlashColorEffect);
         transform.parent.gameObject.Subscribe<LockAnimationStateMessage>(LockAnimationState);
+        transform.parent.gameObject.Subscribe<AnimationCheckMessage>(AnimationCheck);
+        transform.parent.gameObject.Subscribe<ChangeSpriteColorMessage>(ChangeSpriteColor);
     }
 
     private Tween ChangeToColor(Color color, float time)
@@ -84,8 +100,6 @@ public class UnitAnimationController : MonoBehaviour
                 
                 _animator.SetFloat(StaticAnimationParameterStrings.X, animatedDirection.x);
                 _animator.SetFloat(StaticAnimationParameterStrings.Y, animatedDirection.y);
-
-
             }
         }
     }
@@ -178,5 +192,25 @@ public class UnitAnimationController : MonoBehaviour
         _locked = msg.Locked;
     }
 
+    private void AnimationCheck(AnimationCheckMessage msg)
+    {
+        if (msg.States.Contains(_currentAnimationState))
+        {
+            msg.DoAfter?.Invoke();
+        }
+    }
+
+    private void ChangeSpriteColor(ChangeSpriteColorMessage msg)
+    {
+
+        var meshRender = new MeshRenderer();
+        var material = SpriteRenderer.materials[1];
+        //var materialPropertyBlock = new MaterialPropertyBlock();
+        //SpriteRenderer.GetPropertyBlock(materialPropertyBlock);
+        material.SetColor("_ColorIn", msg.FromColor);
+        material.SetColor("_Color1out", msg.ToColor);
+        //SpriteRenderer.SetPropertyBlock(materialPropertyBlock);
+        SpriteRenderer.material = material;
+    }
 
 }

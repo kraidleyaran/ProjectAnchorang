@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Anchor-Catch Combo Input
   Description: 
   MaxStack: 1
+  DebugAura: 0
   Button: 7
   Ability: {fileID: 11400000, guid: 64063e94640e370448c2b9bc545de06c, type: 2}

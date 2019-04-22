@@ -22,6 +22,10 @@ namespace Assets.Scripts.Auras
         {
             if (msg.EventName == OnDemandEventName)
             {
+                if (DebugAura)
+                {
+                    Debug.Break();
+                }
                 foreach (var aura in AurasToApply)
                 {
                     _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _controller.transform.parent.gameObject);
@@ -34,6 +38,7 @@ namespace Assets.Scripts.Auras
         public override void Destroy()
         {
             base.Destroy();
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<OnDemandEventMessage>(_instanceId);
         }
     }
 }

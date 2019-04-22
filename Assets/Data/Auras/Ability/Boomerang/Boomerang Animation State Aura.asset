@@ -15,4 +15,5 @@ MonoBehaviour:
   Name: Boomerang Animation State
   Description: 
   MaxStack: 1
+  DebugAura: 0
   State: 2

@@ -24,7 +24,11 @@ namespace Assets.Scripts.Auras
         {
             if (!msg.PreviousState.Buttons.Contains(Button) && msg.CurrentState.Buttons.Contains(Button))
             {
-                Debug.Log($"{Ability.Name} Ability used");
+                if (DebugAura)
+                {
+                    Debug.Break();
+                    Debug.Log($"{Ability.Name} Ability used");
+                }
                 Ability.UseAbility(_controller.transform.parent.gameObject);
             }
         }

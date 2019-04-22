@@ -1,35 +1,48 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
-[ExecuteInEditMode]
-public class SpriteOutline : MonoBehaviour {
+//[ExecuteInEditMode]
+public class SpriteOutline : MonoBehaviour
+{
+    [Header("Sprite Outline Settings")]
     public Color color = Color.white;
-
     [Range(0, 16)]
     public int outlineSize = 1;
 
-    private SpriteRenderer spriteRenderer;
-    //TODO: Implement MeshRenderer to allow for multiple materials
-    //private MeshRenderer meshRenderer;
 
-    void OnEnable() {
-        spriteRenderer = transform.gameObject.GetComponent<SpriteRenderer>();
+    private SpriteRenderer _spriteRenderer;
+
+    void Awake()
+    {
+        _spriteRenderer = transform.GetComponent<SpriteRenderer>();
+    }
+    
+
+    void OnEnable()
+    {
         UpdateOutline(true);
     }
 
-    void OnDisable() {
+    void OnDisable()
+    {
         UpdateOutline(false);
     }
 
-    void Update() {
+    void Update()
+    {
         UpdateOutline(true);
     }
 
-    void UpdateOutline(bool outline) {
-        MaterialPropertyBlock mpb = new MaterialPropertyBlock();
-        spriteRenderer.GetPropertyBlock(mpb);
-        mpb.SetFloat("_Outline", outline ? 1f : 0);
-        mpb.SetColor("_OutlineColor", color);
-        mpb.SetFloat("_OutlineSize", outlineSize);
-        spriteRenderer.SetPropertyBlock(mpb);
+    void UpdateOutline(bool outline)
+    {
+        //var mpb = new MaterialPropertyBlock();
+
+        //_spriteRenderer.GetPropertyBlock(mpb);
+        var material = _spriteRenderer.materials[2];
+        material.SetFloat("_Outline", outline ? 1f : 0);
+        material.SetColor("_OutlineColor", color);
+        material.SetFloat("_OutlineSize", outlineSize);
+        _spriteRenderer.material = material;
+        //_spriteRenderer.SetPropertyBlock(mpb);
     }
 }

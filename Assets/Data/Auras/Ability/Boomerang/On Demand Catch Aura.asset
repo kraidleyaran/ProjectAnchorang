@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: On Demand Catch
   Description: 
   MaxStack: 1
+  DebugAura: 0
   AurasToApply:
   - {fileID: 11400000, guid: 4b7f204519fda524cb130c13fc8b3fe8, type: 2}
+  - {fileID: 11400000, guid: 827559830fe040641a18b7cccd749ffa, type: 2}
   OnDemandEventName: Catch

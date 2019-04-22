@@ -12,6 +12,8 @@ namespace Assets.Scripts.Auras
         public string Description;
         public int MaxStack = 1;
 
+        public bool DebugAura = false;
+
         protected internal AuraController _controller { get; set; }
         protected internal string _instanceId { get; private set; }
 

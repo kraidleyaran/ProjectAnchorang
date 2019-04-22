@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02017bfa969ef0c419d4d62f294c5624, type: 3}
   m_Name: Destroy Object Aura
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Destroy Object
   Description: 
   MaxStack: 1
+  DebugAura: 0

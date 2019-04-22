@@ -13,6 +13,4 @@ public class HitboxController : MonoBehaviour
     {
         gameObject.SendMessageTo(new ObjectLeftMessage{Object = col.transform.parent.gameObject}, transform.parent.gameObject);
     }
-
-
 }

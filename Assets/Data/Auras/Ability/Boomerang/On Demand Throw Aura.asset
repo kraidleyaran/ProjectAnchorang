@@ -16,6 +16,6 @@ MonoBehaviour:
   Description: 
   MaxStack: 1
   AurasToApply:
-  - {fileID: 11400000, guid: 80316b7b7ca4fe3419aa05e358e7ffda, type: 2}
   - {fileID: 11400000, guid: 827559830fe040641a18b7cccd749ffa, type: 2}
+  - {fileID: 11400000, guid: 80316b7b7ca4fe3419aa05e358e7ffda, type: 2}
   OnDemandEventName: Throw

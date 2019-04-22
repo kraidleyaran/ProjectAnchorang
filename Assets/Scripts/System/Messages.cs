@@ -318,5 +318,60 @@ namespace Assets.Scripts.System
     {
         public bool Locked { get; set; }
     }
+
+    public class DistanceFromTargetMessage : EventMessage
+    {
+        public float Distance { get; set; }
+    }
+
+    public class AnimationCheckMessage : EventMessage
+    {
+        public List<UnitAnimationState> States { get; set; }
+        public Action DoAfter { get; set; }
+    }
+
+    public class ChangeSpriteColorMessage : EventMessage
+    {
+        public Color FromColor { get; set; }
+        public Color ToColor { get; set; }
+    }
+
+    public class SetTunicColorMessage : EventMessage
+    {
+        public Color Color { get; set; }
+    }
+
+    public class SetCurrentStanceMessage : EventMessage
+    {
+        public StanceAura Stance { get; set; }
+    }
+
+    public class AdvanceStanceMessage : EventMessage
+    {
+
+    }
+
+    public class RequestStaminaMessage : EventMessage
+    {
+        public int Stamina { get; set; }
+    }
+
+    public class AdjustStaminaMessage : EventMessage
+    {
+        public int Stamina { get; set; }
+    }
+
+
+    public class UpdateStaminaMessage : EventMessage
+    {
+        public int CurrentStamina { get; set; }
+        public int MaximumStamina { get; set; }
+    }
+
+    public class UpdatePlayerStaminaMessage : EventMessage
+    {
+        public int CurrentStamina { get; set; }
+        public int MaximumStamina { get; set; }
+    }
 }
 

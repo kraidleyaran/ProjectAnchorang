@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Boomerang Terrain Hitbox Aura
   Description: 
   MaxStack: 1
+  DebugAura: 0
   Hitbox: {fileID: 205, guid: 008b364f4159a864c8a3d0973521362a, type: 3}
   AffectedAuras:
   - {fileID: 11400000, guid: ca220c7c9549bd54fa2e0c74df2757f0, type: 2}
@@ -25,9 +26,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f7acab60b00ebb4194a24f823b0b8bf, type: 2}
   - {fileID: 11400000, guid: 31dac99374ee19b469768ba7ca7791ff, type: 2}
   - {fileID: 11400000, guid: d78e8ceaacbb44e43a52b58b461bd51f, type: 2}
-  - {fileID: 11400000, guid: 1b68d38b02e0d254c95262198df56366, type: 2}
   - {fileID: 11400000, guid: 21e409e9fa74694408d329456ee0bf27, type: 2}
   - {fileID: 11400000, guid: 742692d846fb806418bd557182fa325e, type: 2}
+  - {fileID: 11400000, guid: f93831fb581364e44b8926b0938764b1, type: 2}
+  - {fileID: 11400000, guid: ef3e2b429083d6d4b8175326b20373cf, type: 2}
   OnLeaveTargetAuras: []
   OnLeaveSelfAuras: []
   RemoveOnHit: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Boomerang Hitbox
   Description: 
   MaxStack: 1
+  DebugAura: 0
   Hitbox: {fileID: 205, guid: 008b364f4159a864c8a3d0973521362a, type: 3}
   AffectedAuras:
   - {fileID: 11400000, guid: ba185d7955e963e4b930fb8472b307fd, type: 2}
@@ -31,6 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a428a2fa674cdf438e9c65ca2eecc7c, type: 2}
   - {fileID: 11400000, guid: c15cf9bf0c9b9694e88f703fd69b9b0e, type: 2}
   - {fileID: 11400000, guid: 742692d846fb806418bd557182fa325e, type: 2}
+  - {fileID: 11400000, guid: f93831fb581364e44b8926b0938764b1, type: 2}
+  - {fileID: 11400000, guid: ef3e2b429083d6d4b8175326b20373cf, type: 2}
   OnLeaveTargetAuras: []
   OnLeaveSelfAuras: []
   RemoveOnHit: 0

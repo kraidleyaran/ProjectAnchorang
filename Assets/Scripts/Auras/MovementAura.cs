@@ -32,7 +32,8 @@ namespace Assets.Scripts.Auras
                         _controller.transform.gameObject.SendMessageTo(new ObjectHitMessage { ObjectHit = _target.gameObject }, _controller.transform.parent.gameObject);
                         return;
                     }
-                    
+                    var distanceFromTarget = (_target.transform.position.ToVector2() - _rigidBody.position).magnitude;
+                    _controller.gameObject.SendMessageTo(new DistanceFromTargetMessage{Distance = distanceFromTarget}, _controller.transform.parent.gameObject);
                     
                     var direction = (_target.position.ToVector2() - _rigidBody.position).normalized;
                     _setDirection = direction;
