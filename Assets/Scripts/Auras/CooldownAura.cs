@@ -39,13 +39,23 @@ namespace Assets.Scripts.Auras
             currentCooldown.ApplyAfterCooldown = msg.ApplyAfterCooldown;
             if (msg.Cooldown > 0)
             {
+                if (msg.Aura.ShowInUi)
+                {
+                    _controller.gameObject.SendMessageTo(new ShowAuraCooldownMessage{Parent = msg.Aura, Time = msg.Cooldown}, _controller.transform.parent.gameObject);
+                }
+
                 currentCooldown.Cooldown = DOTween.Sequence().AppendInterval(msg.Cooldown).SetEase(Ease.Linear)
                     .OnComplete(
                         () =>
                         {
                             currentCooldown.Cooldown = null;
                             _controller.gameObject.SendMessageTo(new RemoveAuraCooldownMessage{Aura = msg.Aura}, _controller.transform.parent.gameObject);
+                            if (msg.Aura.ShowInUi)
+                            {
+                                _controller.gameObject.SendMessageTo(new HideAuraCooldownMessage{Parent = msg.Aura}, _controller.transform.parent.gameObject);
+                            }
                         });
+                
             }
             _cooldowns.Add(currentCooldown);
         }
@@ -64,6 +74,10 @@ namespace Assets.Scripts.Auras
                 if (cooldown.ApplyAfterCooldown)
                 {
                     _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = cooldown.Aura}, _controller.transform.parent.gameObject);
+                }
+                if (cooldown.Aura.ShowInUi)
+                {
+                    _controller.gameObject.SendMessageTo(new HideAuraCooldownMessage { Parent = cooldown.Aura }, _controller.transform.parent.gameObject);
                 }
             }
         }

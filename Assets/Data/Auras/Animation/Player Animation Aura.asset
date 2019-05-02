@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Player Animation Aura
   Description: 
   MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 21300000, guid: 245596c63187ba24982d64d104d45c2b, type: 3}
+  ShowInUi: 0
+  DebugAura: 0
   RuntimeController: {fileID: 9100000, guid: 867fec6843d8625408a2fc79ceba13f9, type: 2}
   SortingOrder: 0
   DefaultColor: {r: 1, g: 1, b: 1, a: 1}

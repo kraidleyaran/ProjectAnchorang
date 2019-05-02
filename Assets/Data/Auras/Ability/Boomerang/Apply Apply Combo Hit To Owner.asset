@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Apply Combo Hit To Owner
   Description: 
   MaxStack: 1
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
   AurasToApply:
   - {fileID: 11400000, guid: ef7ce3fa9f2ade04b985f6f80c46ccde, type: 2}
-  - {fileID: 11400000, guid: 1b8e4a15b0f372b4f9781c72e1da3ad6, type: 2}
+  - {fileID: 11400000, guid: 37654bf44f6647a4a9fdee42035825cc, type: 2}
+  - {fileID: 11400000, guid: 74e7c9834c5aaa948b3217a472a2d810, type: 2}

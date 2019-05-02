@@ -15,7 +15,8 @@ public class DevTool : MonoBehaviour
 
     [Header("Starting Enemy Info")]
     public List<Aura> EnemyAuras;
-    public Transform EnemyStartingPosition;
+    public List<Transform> EnemyStartingPosition;
+    public int EnemySpawnCount = 2;
 
     [Header("Joystick Debug")]
     public bool LogJoystickInput;
@@ -43,11 +44,17 @@ public class DevTool : MonoBehaviour
             gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _player.gameObject);
         }
 
-        var enemy = Instantiate(FactoryController.UNIT, EnemyStartingPosition.position, Quaternion.identity);
-        foreach (var aura in EnemyAuras)
+        for (var i = 0; i < EnemySpawnCount; i++)
         {
-            gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, enemy.gameObject );
+            var position = Vector2.zero;
+            position = i > EnemyStartingPosition.Count ? EnemyStartingPosition[EnemyStartingPosition.Count].position : EnemyStartingPosition[i].position;
+            var enemy = Instantiate(FactoryController.UNIT, position, Quaternion.identity);
+            foreach (var aura in EnemyAuras)
+            {
+                gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = aura }, enemy.gameObject);
+            }
         }
+
     }
 
     public void ResetButton()

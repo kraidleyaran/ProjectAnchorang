@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760fe5ee2cf25f2499ef1bc5cf190ff0, type: 3}
+  m_Name: Apply Catch Call Animation Check To Owner Aura
+  m_EditorClassIdentifier: 
+  Name: Apply Catch Call Animation Check
+  Description: 
+  MaxStack: 1
+  DebugAura: 0
+  AurasToApply:
+  - {fileID: 11400000, guid: afee0c038a1dfbd458a1103cdd551cc5, type: 2}
+  - {fileID: 11400000, guid: 124f7a1ea43c5674e91079b0f63ae620, type: 2}

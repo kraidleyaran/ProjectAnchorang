@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Auras
 {
-    [CreateAssetMenu(fileName = "On Demand Action Aura", menuName = @"Anchorang/Aura/On Demand Action")]
+    [CreateAssetMenu(fileName = "On Demand Action Aura", menuName = @"Anchorang/Aura/On Demand/On Demand Action")]
     public class OnDemandActionAura : Aura
     {
         public List<Aura> AurasToApply;

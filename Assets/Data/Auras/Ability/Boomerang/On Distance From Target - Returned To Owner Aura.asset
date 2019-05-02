@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6faf970c53fc2e42af5a0d8eb762e4a, type: 3}
+  m_Name: On Distance From Target - Returned To Owner Aura
+  m_EditorClassIdentifier: 
+  Name: On Distance From Target - Returned To Owner
+  Description: 
+  MaxStack: 1
+  DebugAura: 0
+  DetectDistance: 0.85
+  AurasToApply:
+  - {fileID: 11400000, guid: 29196256981df184690028b7197e69c7, type: 2}
+  - {fileID: 11400000, guid: 9385a0504f97e0d4f9ccdf9a4516aad0, type: 2}

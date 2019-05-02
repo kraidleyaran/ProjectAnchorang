@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Target Aim Aura
   m_EditorClassIdentifier: 
   Name: Target Aim
+  Sprite: {fileID: 0}
+  ShowInUi: 0
   Description: 
   MaxStack: 1
+  DebugAura: 0
   TargetAuras:
   - {fileID: 11400000, guid: 4fa408dd81671d64290807444d36e6d1, type: 2}
   - {fileID: 11400000, guid: 03b267c78ff8e8940b8ee6cdbdda1b12, type: 2}
@@ -23,4 +26,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 84da79b40aac32c42b843f6df393ba31, type: 2}
   HoverOutline: {fileID: 11400000, guid: ae4e109223e94c147bc256fd68e27054, type: 2}
   LockedOnOutline: {fileID: 11400000, guid: 3b9c8414599f35446914323df7d7215a, type: 2}
+  TargetLockedOnAuras:
+  - {fileID: 11400000, guid: 3b9c8414599f35446914323df7d7215a, type: 2}
   Distance: 2

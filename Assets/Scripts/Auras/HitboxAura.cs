@@ -26,8 +26,9 @@ namespace Assets.Scripts.Auras
         {
             base.SubscribeController(controller);
             _hitbox = Instantiate(Hitbox, _controller.transform.parent);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<ObjectHitMessage>(ObjectHit, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<ObjectLeftMessage>(ObjectLeft, _instanceId);
+            _hitbox.Setup(_controller);
+            _controller.gameObject.SubscribeWithFilter<ObjectHitMessage>(ObjectHit, _instanceId);
+            _controller.gameObject.SubscribeWithFilter<ObjectLeftMessage>(ObjectLeft, _instanceId);
         }
 
         private void ObjectHit(ObjectHitMessage msg)
@@ -47,8 +48,14 @@ namespace Assets.Scripts.Auras
                 {
                     apply = true;
                 }
+                _controller.gameObject.SendMessageTo(new InvincibilityCheckMessage{DoAfter = () =>
+                {
+                    //Object is invincible, do not apply
+                    apply = false;
+                }}, msg.ObjectHit);
                 if (apply)
                 {
+                    
                     foreach (var aura in OnHitTargetAuras)
                     {
                         _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = aura }, msg.ObjectHit);
@@ -105,9 +112,12 @@ namespace Assets.Scripts.Auras
         public override void Destroy()
         {
             base.Destroy();
-            Destroy(_hitbox.gameObject);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<ObjectHitMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<ObjectLeftMessage>(_instanceId);
+            if (_hitbox)
+            {
+                Destroy(_hitbox.gameObject);
+            }
+            _controller.gameObject.UnsubscribeFromFilter<ObjectHitMessage>(_instanceId);
+            _controller.gameObject.UnsubscribeFromFilter<ObjectLeftMessage>(_instanceId);
         }
     }
 }

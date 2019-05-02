@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.System;
+﻿using Assets.Scripts.Animation;
+using Assets.Scripts.System;
 using MessageBusLib;
 using UnityEngine;
 
@@ -13,7 +14,10 @@ namespace Assets.Scripts.Auras
         public Color DefaultColor = Color.white;
         public Vector2 Scale = Vector2.one;
 
+        public override string AuraDescription => $"Animation State - {_state}";
+
         private UnitAnimationController _animationController { get; set; }
+        private UnitAnimationState _state { get; set; }
 
         public override void SubscribeController(AuraController controller)
         {
@@ -23,6 +27,12 @@ namespace Assets.Scripts.Auras
             _animationController.SpriteRenderer.sortingOrder = SortingOrder;
             _animationController.SpriteRenderer.transform.localScale = Scale;
             _controller.gameObject.SendMessageTo(new SetUnitRuntimeAnimatorMessage{Animator = RuntimeController}, _controller.transform.parent.gameObject);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateAnimationStateMessage>(UpdateAnimationState, _instanceId);
+        }
+
+        private void UpdateAnimationState(UpdateAnimationStateMessage msg)
+        {
+            _state = msg.State;
         }
 
         public override void Destroy()
@@ -32,6 +42,7 @@ namespace Assets.Scripts.Auras
             {
                 Destroy(_animationController.gameObject);
             }
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<UpdateAnimationStateMessage>(_instanceId);
         }
     }
 }

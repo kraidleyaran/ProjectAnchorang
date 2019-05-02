@@ -15,5 +15,8 @@ MonoBehaviour:
   Name: Anchor Hit Combo Input
   Description: 
   MaxStack: 1
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
   Button: 6
   Ability: {fileID: 11400000, guid: bcc963c4951adda40ae724cedb393b5c, type: 2}

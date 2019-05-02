@@ -13,6 +13,7 @@ namespace Assets.Scripts.Auras
         public List<Aura> ProjectileAuras;
         public int MaxProjectiles = 1;
         public float DistanceInFrontOfPlayer = .5f;
+        public float Angle = 0f;
 
         private List<UnitController> _projectiles { get; set; }
         private Sequence _timeBetweenProjectiles { get; set; }
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Auras
         {
             base.SubscribeController(controller);
             _projectiles = new List<UnitController>();
-            _controller.transform.parent.gameObject.SubscribeWithFilter<AimDirectionMessage>(AimDirection, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateAimDirectionMessage>(AimDirection, _instanceId);
             _controller.transform.parent.gameObject.SendMessageTo(new RequestAimDirectionMessage(), _controller.transform.parent.gameObject);
             //_controller.gameObject.SendMessageTo(new ShootProjectileMessage{Aura = this}, _controller.transform.parent.gameObject);
         }
@@ -40,7 +41,8 @@ namespace Assets.Scripts.Auras
                     {
                         _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = aura }, projectile.gameObject);
                     }
-                    _controller.gameObject.SendMessageTo(new SetMovementDirectionMessage { Direction = _aimDireciton }, projectile.gameObject);
+                    var aimDirection = Quaternion.Euler(0, 0, Angle) * _aimDireciton;
+                    _controller.gameObject.SendMessageTo(new SetMovementDirectionMessage { Direction = aimDirection  }, projectile.gameObject);
                     _controller.gameObject.SendMessageTo(new SetOwnerMessage{Owner = _controller.transform.parent.gameObject}, projectile.gameObject);
                     _projectiles.Add(projectile);
                 }
@@ -51,7 +53,7 @@ namespace Assets.Scripts.Auras
             }
         }
 
-        private void AimDirection(AimDirectionMessage msg)
+        private void AimDirection(UpdateAimDirectionMessage msg)
         {
             _aimDireciton = msg.Direction;
         }
@@ -59,7 +61,7 @@ namespace Assets.Scripts.Auras
         public override void Destroy()
         {
             base.Destroy();
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<AimDirectionMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<UpdateAimDirectionMessage>(_instanceId);
         }
     }
 }

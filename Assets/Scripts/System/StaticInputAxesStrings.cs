@@ -9,9 +9,11 @@
         public const string LEFT_TRIGGER = "Left Trigger";
         public const string RIGHT_TRIGGER = "Right Trigger";
         public const string X = "X";
+        public const string A = "A";
         public const string LEFT_BUMPER = "Left Bumper";
         public const string RIGHT_BUMPER = "Right Bumper";
         public const string MENU = "Menu";
+        
         
     }
 }

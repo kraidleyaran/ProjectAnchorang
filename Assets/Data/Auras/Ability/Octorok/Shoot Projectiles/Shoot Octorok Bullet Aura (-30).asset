@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a36c899529f91e46b099f16e4efb17e, type: 3}
+  m_Name: Shoot Octorok Bullet Aura (-30)
+  m_EditorClassIdentifier: 
+  Name: Shoot Octorok Bullet -30
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
+  ProjectileAuras:
+  - {fileID: 11400000, guid: 8722f26544221de478ac8897c6948ddc, type: 2}
+  - {fileID: 11400000, guid: e98c8bd6f26bfac48adaf8261384ee5c, type: 2}
+  - {fileID: 11400000, guid: 41eca11d3c3da9e4ca74a941de03a2ee, type: 2}
+  - {fileID: 11400000, guid: 6b934bcecb69a944c9be9c77982e4fd1, type: 2}
+  - {fileID: 11400000, guid: 576fd73b6133afe4790737a26bc50c7e, type: 2}
+  MaxProjectiles: 1
+  DistanceInFrontOfPlayer: 0.5
+  Angle: -7.5

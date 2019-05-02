@@ -12,6 +12,7 @@ namespace Assets.Scripts.Auras
         public List<Aura> TargetAuras;
         public OutlineAura HoverOutline;
         public OutlineAura LockedOnOutline;
+        public List<Aura> TargetLockedOnAuras;
         public float Distance;
 
         private Vector2 _aimDirection { get; set; }
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Auras
         public override void SubscribeController(AuraController controller)
         {
             base.SubscribeController(controller);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<AimDirectionMessage>(AimDirection, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateAimDirectionMessage>(AimDirection, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<RegisterTargetAimReticuleMessage>(RegisterTargetAimObject, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetHoverTargetMessage>(SetHoverTarget, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetLockedTargetMessage>(SetLockedTarget, _instanceId);
@@ -42,11 +43,15 @@ namespace Assets.Scripts.Auras
             {
                 _controller.transform.parent.gameObject.SendMessageTo(new SetPositionMessage{Position = _lockedTarget.transform.position}, _targetReticule);
                 _aimDirection = _lockedTarget.transform.position - _controller.transform.position;
-                _controller.gameObject.SendMessageTo(new AimDirectionMessage{Direction = _aimDirection}, _controller.transform.parent.gameObject);
+                _controller.gameObject.SendMessageTo(new UpdateAimDirectionMessage{Direction = _aimDirection}, _controller.transform.parent.gameObject);
+            }
+            else if (_targetReticule)
+            {
+                _controller.gameObject.SendMessageTo(new SetPositionMessage { Position = _controller.transform.position.ToVector2() + _aimDirection.normalized * Distance }, _targetReticule);
             }
         }
 
-        private void AimDirection(AimDirectionMessage msg)
+        private void AimDirection(UpdateAimDirectionMessage msg)
         {
             if (_targetReticule && !_lockedTarget)
             {
@@ -69,13 +74,21 @@ namespace Assets.Scripts.Auras
         {
             if (_lockedTarget && !_hoverTarget)
             {
-                _controller.gameObject.SendMessageTo(new RemoveAuraFromObjectMessage{Aura = LockedOnOutline}, _lockedTarget);
+                foreach (var aura in TargetLockedOnAuras)
+                {
+                    _controller.gameObject.SendMessageTo(new RemoveAuraFromObjectMessage{Aura = aura}, _lockedTarget);
+                }
+                
             }
             _lockedTarget = _hoverTarget;
             _hoverTarget = null;
             if (_lockedTarget)
             {
-                _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = LockedOnOutline }, _lockedTarget);
+                foreach (var aura in TargetLockedOnAuras)
+                {
+                    _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _lockedTarget);
+                }
+                //_controller.gameObject.SendMessageTo(new AddAuraToObjectMessage { Aura = LockedOnOutline }, _lockedTarget);
             }
             else
             {
@@ -86,7 +99,7 @@ namespace Assets.Scripts.Auras
         public override void Destroy()
         {
             base.Destroy();
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<AimDirectionMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<UpdateAimDirectionMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetHoverTargetMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetLockedTargetMessage>(_instanceId);
         }

@@ -15,7 +15,9 @@ MonoBehaviour:
   Name: On Demand Throw
   Description: 
   MaxStack: 1
+  DebugAura: 0
   AurasToApply:
   - {fileID: 11400000, guid: 827559830fe040641a18b7cccd749ffa, type: 2}
   - {fileID: 11400000, guid: 80316b7b7ca4fe3419aa05e358e7ffda, type: 2}
+  - {fileID: 11400000, guid: de75f626e33dafb4f85201f4de14128d, type: 2}
   OnDemandEventName: Throw

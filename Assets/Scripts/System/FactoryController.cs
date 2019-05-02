@@ -9,6 +9,9 @@ namespace Assets.Scripts.System
         public static UnitController UNIT { get; private set; }
         public static UnitAnimationController UNIT_ANIMATION_CONTROLLER { get; private set; }
         public static SoundController SOUND { get; private set; }
+        public static GameObject DESTINATION { get; private set; }
+        public static Color BUFF { get; private set; }
+        public static Color DEBUFF { get; private set; }
 
         private static FactoryController _instance { get; set; }
 
@@ -17,6 +20,12 @@ namespace Assets.Scripts.System
         public UnitController UnitTemplate;
         public UnitAnimationController UnitAnimationTemplate;
         public SoundController SoundTemplate;
+        public GameObject DestinationTemplate;
+
+        [Header("Global Aura Border Color Settings")]
+        public Color Buff;
+        public Color Debuff;
+        
 
         void Awake()
         {
@@ -36,6 +45,9 @@ namespace Assets.Scripts.System
             UNIT = UnitTemplate;
             UNIT_ANIMATION_CONTROLLER = UnitAnimationTemplate;
             SOUND = SoundTemplate;
+            DESTINATION = DestinationTemplate;
+            BUFF = Buff;
+            DEBUFF = Debuff;
         }
     }
 }

@@ -10,9 +10,17 @@ namespace Assets.Scripts.Auras
 
         public void Setup(Aura aura)
         {
-            CurrentAura = Instantiate(aura);
+            CurrentAura = Instantiate(aura, transform);
             CurrentAura.SubscribeController(this);
             name = $"{aura.Name} Aura Controller";
+        }
+
+        public void Destroy()
+        {
+            CurrentAura.Destroy();
+            CurrentAura = null;
+            gameObject.UnsubscribeFromAllMessages();
+            Destroy(gameObject);
         }
 
         void Update()
@@ -25,9 +33,14 @@ namespace Assets.Scripts.Auras
             CurrentAura.FixedUpdate();
         }
 
+
         void OnDestroy()
         {
-            CurrentAura.Destroy();
+            if (CurrentAura)
+            {
+                CurrentAura.Destroy();
+            }
+            //CurrentAura.Destroy();
             gameObject.UnsubscribeFromAllMessages();
         }
     }

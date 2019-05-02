@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Player Movement
   Description: 
   MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 21300000, guid: 724110916bcb18e40a2ffd695a2b34b2, type: 3}
+  ShowInUi: 0
+  DebugAura: 0
   MovementInfo:
     Acceleration: 2
     MaxSpeed: 5
@@ -22,3 +26,4 @@ MonoBehaviour:
   PhysicsBox: {fileID: 3724529547956097623, guid: cec73fc666eacb842acb6bbcb2bf4d1c,
     type: 3}
   AlwaysMoving: 0
+  StopMovementAuras: []

@@ -15,5 +15,9 @@ MonoBehaviour:
   Name: Anchor Catch
   Description: 
   MaxStack: 1
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
   Aura: {fileID: 11400000, guid: 03ca545ffd46c084882244b2fc8e624b, type: 2}
   Length: 0.5
+  ShowUiTimer: 1

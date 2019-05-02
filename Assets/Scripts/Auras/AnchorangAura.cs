@@ -11,75 +11,77 @@ namespace Assets.Scripts.Auras
 
         [Header("Anchorang Aura Settings")]
         public int MaxAnchorangs = 1;
-        public AbilityInputAura ThrowAnchorang;
-
+        public AbilityInputAura ThrowAnchorangInput;
+        public List<Aura> AnchorangAuras;
+        public int EquippedDashCost = 0;
+        public int UnequippedDashCost = 0;
+        
+        private int _currentStaminaCost { get; set; }
+        private float _currentStamina { get; set; }
         private AnchorangState _state { get; set; }
-        private List<GameObject> _projectiles { get; set; }
-
 
         public override void SubscribeController(AuraController controller)
         {
             base.SubscribeController(controller);
-            _projectiles = new List<GameObject>();
-            _controller.transform.parent.gameObject.SubscribeWithFilter<RegisterAnchorangMessage>(RegisterAnchorang, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<UnReigsterAnchorangMessage>(UnRegisterAnchorang, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<UpdateStaminaMessage>(UpdateStamina, _instanceId);
             _controller.transform.parent.gameObject.SubscribeWithFilter<SetAnchorangStateMessage>(SetAnchorangState, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<RequestAnchorangStateMessage>(RequestAnchorangState, _instanceId);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<ApplyAurasToCurrentAnchorangsMessage>(ApplyAurasToCurrentAnchorangs, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<ThrowAnchorangMessage>(ThrowAnchorang, _instanceId);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SetAnchorangThrowCostMessage>(SetAnchorangThrowCost, _instanceId);
+            _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = ThrowAnchorangInput}, _controller.transform.parent.gameObject);
+            _controller.gameObject.SendMessageTo(new SetDashStaminaCostMessage{StaminaCost = EquippedDashCost}, _controller.transform.parent.gameObject);
         }
 
-        private void RegisterAnchorang(RegisterAnchorangMessage msg)
+        private void UpdateStamina(UpdateStaminaMessage msg)
         {
-            _projectiles.Add(msg.AnchorangProjectile);
-        }
-
-        private void UnRegisterAnchorang(UnReigsterAnchorangMessage msg)
-        {
-            _projectiles.Remove(msg.AnchorangProjectile);
+            _currentStamina = msg.CurrentStamina;
+            var hasEnoughStamina = _currentStamina >= _currentStaminaCost;
+            _controller.gameObject.SendMessage(new UpdateRequiredStaminamStatusMessage{HasEnough = hasEnoughStamina});
         }
 
         private void SetAnchorangState(SetAnchorangStateMessage msg)
         {
-            
+            _state = msg.State;
+            var stamina = 0;
             switch (_state)
             {
                 case AnchorangState.Caught:
-                    _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = ThrowAnchorang}, _controller.transform.parent.gameObject);
+                    stamina = EquippedDashCost;
                     break;
                 case AnchorangState.Thrown:
-                    _controller.gameObject.SendMessageTo(new RemoveAuraFromObjectMessage{Aura = ThrowAnchorang }, _controller.transform.parent.gameObject);
+                    stamina = UnequippedDashCost;
                     break;
             }
-            
-            
+            _controller.gameObject.SendMessageTo(new SetDashStaminaCostMessage{StaminaCost = stamina},  _controller.transform.parent.gameObject);
         }
 
-        private void RequestAnchorangState(RequestAnchorangStateMessage msg)
+        private void ThrowAnchorang(ThrowAnchorangMessage msg)
         {
-            _controller.gameObject.SendMessageTo(new SetAnchorangStateMessage{State = _state}, _controller.transform.parent.gameObject);
-        }
-
-        private void ApplyAurasToCurrentAnchorangs(ApplyAurasToCurrentAnchorangsMessage msg)
-        {
-            /*
-            foreach (var projectile in _projectiles)
-            {
-                foreach (var aura in msg.Auras)
+            _controller.gameObject.SendMessageTo(new AuraCheckMessage{Predicate = a => a.Name == ThrowAnchorangInput.Name, DoAfter =
+                auras =>
                 {
-                    _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, projectile);
-                }
-            }
-            */
+                    if (auras.Count > 0 && _currentStamina >= _currentStaminaCost)
+                    {
+                        _controller.gameObject.SendMessageTo(new AdjustStaminaMessage { Stamina = _currentStaminaCost * -1 }, _controller.transform.parent.gameObject);
+                        foreach (var aura in AnchorangAuras)
+                        {
+                            _controller.gameObject.SendMessageTo(new AddAuraToObjectMessage{Aura = aura}, _controller.transform.parent.gameObject);
+                        }
+                    }
+                }}, _controller.transform.parent.gameObject);
+        }
+
+        private void SetAnchorangThrowCost(SetAnchorangThrowCostMessage msg)
+        {
+            _currentStaminaCost = msg.Stamina;
         }
 
         public override void Destroy()
         {
             base.Destroy();
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<RegisterAnchorangMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<UnReigsterAnchorangMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<UpdateStaminaMessage>(_instanceId);
             _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetAnchorangStateMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<RequestAnchorangStateMessage>(_instanceId);
-            _controller.transform.parent.gameObject.UnsubscribeFromFilter<ApplyAurasToCurrentAnchorangsMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<ThrowAnchorangMessage>(_instanceId);
+            _controller.transform.parent.gameObject.UnsubscribeFromFilter<SetAnchorangThrowCostMessage>(_instanceId);
         }
     }
 }

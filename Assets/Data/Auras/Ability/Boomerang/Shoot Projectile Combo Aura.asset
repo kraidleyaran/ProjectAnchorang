@@ -15,6 +15,10 @@ MonoBehaviour:
   Name: Shoot Boomerang
   Description: 
   MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
   ProjectileAuras:
   - {fileID: 11400000, guid: 70e51f6385a0b85498f8cb5d04d21d2b, type: 2}
   - {fileID: 11400000, guid: d2d5998e1a56b2247b5f07720daf7afe, type: 2}
@@ -26,5 +30,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 208ad46c4d6a8af41b3a785a3fbbab0f, type: 2}
   - {fileID: 11400000, guid: e993f1a646873984d943410452204006, type: 2}
   - {fileID: 11400000, guid: 830a132a7bbe2f445bda6a53507ea8b5, type: 2}
+  - {fileID: 11400000, guid: 9fa53558cd3dfee41baf69c3c9b6944f, type: 2}
   MaxProjectiles: 1
   DistanceInFrontOfPlayer: 0.6
+  Angle: 0

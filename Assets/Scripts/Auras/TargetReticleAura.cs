@@ -22,10 +22,11 @@ namespace Assets.Scripts.Auras
         private void SetOwner(SetOwnerMessage msg)
         {
             _owner = msg.Owner;
-            _controller.transform.parent.gameObject.SubscribeWithFilter<ObjectHitMessage>(ObjectHit);
+            //_controller.transform.parent.gameObject.SubscribeWithFilter<ObjectHitMessage>(ObjectHit);
             _controller.transform.parent.gameObject.SendMessageTo(new RegisterTargetAimReticuleMessage{Object = _controller.transform.parent.gameObject}, msg.Owner);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<SetHoverTargetMessage>(SetHoverTarget);
-            _controller.transform.parent.gameObject.SubscribeWithFilter<ObjectLeftMessage>(ObjectLeft);
+            _controller.transform.parent.gameObject.SubscribeWithFilter<SetHoverTargetMessage>(SetHoverTarget, _instanceId);
+            //_controller.transform.parent.gameObject.SubscribeWithFilter<ObjectLeftMessage>(ObjectLeft);
+            _controller.gameObject.Subscribe<SetPlayerHoverTargetMessage>(SetPlayerHoverTarget);
         }
 
         private void ObjectHit(ObjectHitMessage msg)
@@ -60,6 +61,11 @@ namespace Assets.Scripts.Auras
         private void SetHoverTarget(SetHoverTargetMessage msg)
         {
             _target = msg.Target;
+        }
+
+        private void SetPlayerHoverTarget(SetPlayerHoverTargetMessage msg)
+        {
+            _controller.gameObject.SendMessageTo(new SetHoverTargetMessage{Target = msg.Target}, _owner);
         }
 
         public override void Destroy()

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961799f990a15354eb6debc35e88b70c, type: 3}
+  m_Name: Low Stance Aura
+  m_EditorClassIdentifier: 
+  Name: Low Stance
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
+  TunicColor: {r: 1, g: 1, b: 1, a: 0}
+  StaminaCost: 15
+  StaminaPerSecond: 3
+  StanceSprite: {fileID: 21300000, guid: 158dece707d4ba04e954ef4f5eeed74e, type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a253c87df730a734e95eaa784dce9e47, type: 3}
+  m_Name: Octorok Shoot Ability Cooldown
+  m_EditorClassIdentifier: 
+  Name: Octorok Shoot Projectile Cooldown
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
+  Aura: {fileID: 11400000, guid: 4c85f77e16110124b952f6c7bea82d48, type: 2}
+  Cooldown: 6
+  ReApplyOffCooldown: 0

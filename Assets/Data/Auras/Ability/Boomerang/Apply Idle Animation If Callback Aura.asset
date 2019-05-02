@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46dc69709693ac745bb53b557e4e2c42, type: 3}
+  m_Name: Apply Idle Animation If Callback Aura
+  m_EditorClassIdentifier: 
+  Name: Apply Idle Animation If Callback
+  Description: 
+  MaxStack: 1
+  DebugAura: 0
+  AnimationStates: 0300000004000000
+  ApplyIf: 1
+  AurasToApply:
+  - {fileID: 11400000, guid: 4b7f204519fda524cb130c13fc8b3fe8, type: 2}

@@ -20,12 +20,12 @@ namespace Assets.Scripts.Auras
         private void SetAimDirection(SetAimDirectionMessage msg)
         {
             _aimDirection = msg.Direction;
-            _controller.gameObject.SendMessageTo(new AimDirectionMessage{Direction = _aimDirection}, _controller.transform.parent.gameObject);
+            _controller.gameObject.SendMessageTo(new UpdateAimDirectionMessage{Direction = _aimDirection}, _controller.transform.parent.gameObject);
         }
 
         private void RequestAimDirection(RequestAimDirectionMessage msg)
         {
-            _controller.gameObject.SendMessageTo(new AimDirectionMessage{Direction = _aimDirection}, msg.Sender);
+            _controller.gameObject.SendMessageTo(new UpdateAimDirectionMessage{Direction = _aimDirection}, msg.Sender);
         }
 
         public override void Destroy()

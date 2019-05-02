@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Auras
 {
-    [CreateAssetMenu(fileName = "Adjust Movement Value Aura", menuName = @"Anchorang/Aura/Adjust Movement Value")]
+    [CreateAssetMenu(fileName = "Adjust Movement Value Aura", menuName = @"Anchorang/Aura/Stats/Adjust Movement Value")]
     public class AdjustMovementValueAura : Aura
     {
         [Header("Adjust Movement Value Aura Settings")]
@@ -17,13 +17,13 @@ namespace Assets.Scripts.Auras
         public override void SubscribeController(AuraController controller)
         {
             base.SubscribeController(controller);
-            _controller.gameObject.SubscribeWithFilter<MovementInfoMessage>(MovementInfo, _instanceId);
+            _controller.gameObject.SubscribeWithFilter<UpdateMovementInfoMessage>(MovementInfo, _instanceId);
             _controller.gameObject.SendMessageTo(new RequestMovementInfoMessage(), _controller.transform.parent.gameObject);
         }
 
-        private void MovementInfo(MovementInfoMessage msg)
+        private void MovementInfo(UpdateMovementInfoMessage msg)
         {
-            _controller.gameObject.UnsubscribeFromFilter<MovementInfoMessage>(_instanceId);
+            _controller.gameObject.UnsubscribeFromFilter<UpdateMovementInfoMessage>(_instanceId);
             var sendValue = Amount;
             if (AdjustmentType == AdjustmentType.Multiplier)
             {

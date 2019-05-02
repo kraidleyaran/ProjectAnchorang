@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Auras
 {
+    [CreateAssetMenu(fileName = "Set Anchorang State Aura", menuName = @"Anchorang/Aura/Anchorang/Set Anchorang State")]
     public class SetAnchorangStateAura : Aura
     {
         [Header("Set Anchorang State Aura settings")]

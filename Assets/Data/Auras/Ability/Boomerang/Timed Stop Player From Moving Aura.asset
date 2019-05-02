@@ -15,5 +15,6 @@ MonoBehaviour:
   Name: Timed Stop Movement
   Description: 
   MaxStack: 1
+  DebugAura: 0
   Aura: {fileID: 11400000, guid: 6d1b476da3c5fbb46a8984b57d5be4bf, type: 2}
   Length: 0.6

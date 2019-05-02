@@ -35,14 +35,12 @@ public class SpriteOutline : MonoBehaviour
 
     void UpdateOutline(bool outline)
     {
-        //var mpb = new MaterialPropertyBlock();
+        var mpb = new MaterialPropertyBlock();
 
-        //_spriteRenderer.GetPropertyBlock(mpb);
-        var material = _spriteRenderer.materials[2];
-        material.SetFloat("_Outline", outline ? 1f : 0);
-        material.SetColor("_OutlineColor", color);
-        material.SetFloat("_OutlineSize", outlineSize);
-        _spriteRenderer.material = material;
-        //_spriteRenderer.SetPropertyBlock(mpb);
+        _spriteRenderer.GetPropertyBlock(mpb);
+        mpb.SetFloat("_Outline", outline ? 1f : 0);
+        mpb.SetColor("_OutlineColor", color);
+        mpb.SetFloat("_OutlineSize", outlineSize);
+        _spriteRenderer.SetPropertyBlock(mpb);
     }
 }

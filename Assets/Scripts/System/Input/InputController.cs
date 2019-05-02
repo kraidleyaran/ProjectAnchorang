@@ -68,6 +68,11 @@ public class InputController : MonoBehaviour
             currentState.Buttons.Add(GameInputButton.X);
         }
 
+        if (Input.GetButton(StaticInputAxesStrings.A))
+        {
+            currentState.Buttons.Add(GameInputButton.A);
+        }
+
         if (Input.GetButton(StaticInputAxesStrings.RIGHT_BUMPER))
         {
             currentState.Buttons.Add(GameInputButton.RightBumper);
@@ -82,6 +87,8 @@ public class InputController : MonoBehaviour
         {
             currentState.Buttons.Add(GameInputButton.LeftBumper);
         }
+
+
 
 
         gameObject.SendMessage(new InputStateMessage{PreviousState = _previousState, CurrentState = currentState});

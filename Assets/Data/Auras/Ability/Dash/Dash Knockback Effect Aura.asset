@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2df241c02821914e97b62f361db4648, type: 3}
+  m_Name: Dash Knockback Effect Aura
+  m_EditorClassIdentifier: 
+  Name: Dash Knockback
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
+  KnockbackDistance: 2
+  KnockbackSpeed: 10
+  AffectedAuras:
+  - {fileID: 11400000, guid: ba185d7955e963e4b930fb8472b307fd, type: 2}
+  KnockbackHitbox: {fileID: 5678387044313381570, guid: d2d5496644e4fd34c9b499f448c9522d,
+    type: 3}

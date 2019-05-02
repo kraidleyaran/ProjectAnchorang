@@ -15,15 +15,22 @@ MonoBehaviour:
   Name: Crosshair Hitbox
   Description: 
   MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
   Hitbox: {fileID: 1434898454910006246, guid: ec231624b0f7bf642934afe3fd07c47e, type: 3}
   AffectedAuras:
   - {fileID: 11400000, guid: ba185d7955e963e4b930fb8472b307fd, type: 2}
   OnHitTargetAuras:
   - {fileID: 11400000, guid: ae4e109223e94c147bc256fd68e27054, type: 2}
+  - {fileID: 11400000, guid: 3feadd224a1abf34ea6a4c732d8d001d, type: 2}
+  - {fileID: 11400000, guid: db47524a41b5c084690432ea7499ad29, type: 2}
   OnHitSelfAuras:
   - {fileID: 11400000, guid: 590d62938cafe664c8270d472fa1fbc4, type: 2}
   OnLeaveTargetAuras:
   - {fileID: 11400000, guid: 368b4b6199d444549a47f0e682642317, type: 2}
+  - {fileID: 11400000, guid: 18dad405d3226a3489276ceb330eaa20, type: 2}
   OnLeaveSelfAuras:
   - {fileID: 11400000, guid: f3b9bc1a1a9720940aaf90c9ffd0d365, type: 2}
   RemoveOnHit: 0

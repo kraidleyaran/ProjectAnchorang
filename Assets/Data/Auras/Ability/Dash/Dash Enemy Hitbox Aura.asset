@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95ae10f2e9449e42be00df9c9961e94, type: 3}
+  m_Name: Dash Enemy Hitbox Aura
+  m_EditorClassIdentifier: 
+  Name: Dash Enemy Hitbox
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 0}
+  ShowInUi: 0
+  DebugAura: 0
+  Hitbox: {fileID: 5678387044313381570, guid: d2d5496644e4fd34c9b499f448c9522d, type: 3}
+  AffectedAuras:
+  - {fileID: 11400000, guid: ba185d7955e963e4b930fb8472b307fd, type: 2}
+  OnHitTargetAuras:
+  - {fileID: 11400000, guid: e4619552e1f0bc94db3fc0da828e1c72, type: 2}
+  OnHitSelfAuras:
+  - {fileID: 11400000, guid: c618ecd1091b1e440845186adcaea91c, type: 2}
+  - {fileID: 11400000, guid: 6d1b476da3c5fbb46a8984b57d5be4bf, type: 2}
+  OnLeaveTargetAuras: []
+  OnLeaveSelfAuras: []
+  RemoveOnHit: 0

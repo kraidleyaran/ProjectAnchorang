@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b581e018a8f1b948b5f09a764f09128, type: 3}
+  m_Name: Change Stance
+  m_EditorClassIdentifier: 
+  Name: Change Stance
+  Aura:
+  - {fileID: 11400000, guid: 5c3b99e9b253d9846a0f778565412d8e, type: 2}

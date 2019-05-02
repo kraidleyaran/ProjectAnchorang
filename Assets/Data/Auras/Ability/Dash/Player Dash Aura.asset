@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02684b9dd3b9df47b653c4e435bf0fd, type: 3}
+  m_Name: Player Dash Aura
+  m_EditorClassIdentifier: 
+  Name: Player Dash Aura
+  Description: 
+  MaxStack: 1
+  AuraType: 0
+  Sprite: {fileID: 21300000, guid: 20faad0872225a84bbee6717f569c61c, type: 3}
+  ShowInUi: 1
+  DebugAura: 0
+  DashAuras:
+  - {fileID: 11400000, guid: 4a67b76716a54dc49b072c4ff340b17d, type: 2}
+  - {fileID: 11400000, guid: 827559830fe040641a18b7cccd749ffa, type: 2}
+  - {fileID: 11400000, guid: 1c2a39e7c881bfe49af9a04c0a6d5632, type: 2}
+  - {fileID: 11400000, guid: f2166cc1764081042ab4e17fa00db49f, type: 2}
+  - {fileID: 11400000, guid: 31455a4b094526e429eb16a013f9f92a, type: 2}
+  - {fileID: 11400000, guid: aeff37a7dce9f654382ffbe44f9656bd, type: 2}
+  - {fileID: 11400000, guid: f21fc76703a07684789407d442523403, type: 2}
+  - {fileID: 11400000, guid: 81f43899aeebf4548ba4f2c04cee5f4a, type: 2}
+  - {fileID: 11400000, guid: 2f1fed9e1069fd049b18759be6036b5b, type: 2}
+  - {fileID: 11400000, guid: bd4757008dabc1f4c99a5060180e984f, type: 2}
+  - {fileID: 11400000, guid: 7305babb984711a4aa22ef27cb307582, type: 2}
+  SpinSlashAuras:
+  - {fileID: 11400000, guid: 827559830fe040641a18b7cccd749ffa, type: 2}
+  - {fileID: 11400000, guid: 9d6027d9d9fd18b4c9117ee8ad308ad1, type: 2}
+  - {fileID: 11400000, guid: f2166cc1764081042ab4e17fa00db49f, type: 2}
+  - {fileID: 11400000, guid: 31455a4b094526e429eb16a013f9f92a, type: 2}
+  - {fileID: 11400000, guid: 6d1b476da3c5fbb46a8984b57d5be4bf, type: 2}
+  MovingDashDistance: 5
+  IdleDashDistance: 2.3
+  DashTime: 0.25
+  Input: 0

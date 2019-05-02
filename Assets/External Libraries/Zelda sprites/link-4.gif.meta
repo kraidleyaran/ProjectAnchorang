@@ -60,6 +60,56 @@ TextureImporter:
     21300110: Link_ThrowBoomerang_Up_3
     21300112: Link_ThrowBoomerang_Up_4
     21300114: Link_ThrowBoomerang_Up_5
+    21300116: Link_Roll_Down_0
+    21300118: Link_Roll_Down_1
+    21300120: Link_Roll_Down_2
+    21300122: Link_Roll_Down_3
+    21300124: Link_Roll_Down_4
+    21300126: Link_Roll_Down_5
+    21300128: Link_Roll_Down_6
+    21300130: Link_Roll_Down_7
+    21300132: Link_Roll_Side_0
+    21300134: Link_Roll_Side_1
+    21300136: Link_Roll_Side_2
+    21300138: Link_Roll_Side_3
+    21300140: Link_Roll_Side_4
+    21300142: Link_Roll_Side_5
+    21300144: Link_Roll_Side_6
+    21300146: Link_Roll_Side_7
+    21300148: Link_Roll_Up_0
+    21300150: Link_Roll_Up_1
+    21300152: Link_Roll_Up_2
+    21300154: Link_Roll_Up_3
+    21300156: Link_Roll_Up_4
+    21300158: Link_Roll_Up_5
+    21300160: Link_Roll_Up_6
+    21300162: Link_Roll_Up_7
+    21300164: Link_SpinSlash_0
+    21300166: Link_SpinSlash_1
+    21300168: Link_SpinSlash_2
+    21300170: Link_SpinSlash_3
+    21300172: Link_SpinSlash_4
+    21300174: Link_SpinSlash_5
+    21300176: Link_SpinSlash_6
+    21300178: Link_SpinSlash_7
+    21300180: Link_SpinSlash_8
+    21300182: Link_SpinSlash_9
+    21300184: Link_SpinSlash_10
+    21300186: Link_SpinSlash_11
+    21300188: Link_SpinSlash_12
+    21300190: Link_Death_0
+    21300192: Link_Death_1
+    21300194: Link_Death_2
+    21300196: Link_Death_3
+    21300198: Link_Death_4
+    21300200: Link_Death_5
+    21300202: Link_Death_6
+    21300204: Link_Death_7
+    21300206: Link_Death_8
+    21300208: Link_Death_9
+    21300210: Link_Death_10
+    21300212: Link_Death_11
+    21300214: Link_Death_12
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -1352,6 +1402,1006 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 13b0af0b33c530b4399fe6eb5f9b9241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_0
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae0b25da65643e488bbc46f4d499ec5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_1
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7596339c017ec44b7649cca0ad0dcf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5a43326ff5ace469c8ebc303c1b719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 687ef2680efc6714aa2b7fcbadaadef3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_4
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e9007e1e007164096de5fefd5df3d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_5
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15517e7b3d22cc041be9597463836e7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_6
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 2591
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022fb257019eb264ba9751c035eaf1de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Down_7
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 2591
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73cdd2e9becff784ab6b34fbe0856f91
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_0
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b793459fdc6ad774ca66f74683d620d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 2559
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 600ef8e9a881d1349a57d3441d72485d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_2
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8169ab516f248184285294573b793a70
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f28841a091e5d4f9b88f7e803d8182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_4
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9077d480bcfb3f4f8623a583a2e1038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_5
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59761190684629242814b34fca4051bb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_6
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 2559
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a2c1bfa9aea324c8ea1acedc3803f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Side_7
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 2559
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1048d80d479d5d0449520500721dbbe5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_0
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595a46edda178a347944f5ad127c0947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d74c513eacbe4847886eff60a1a581d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_2
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fe2c79c5baa1441ad673f4860501b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0956369b649f94ba9c2f2d13456d4c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_4
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6798789871828f4e8f2f8e7bb681d90
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_5
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 2527
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1045b7a1509dc8546af960108ec26ee6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_6
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 2527
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d7358b1fbb358438b5c7caef23162e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Roll_Up_7
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 2527
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d499975d5ae9a6845b6e44a3713e4238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 2323
+        width: 32
+        height: 24
+      alignment: 9
+      pivot: {x: 0.34375, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31fb3eb2a0c6ca41b7f9cba2f7aec07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 2323
+        width: 19
+        height: 32
+      alignment: 9
+      pivot: {x: 0.57894737, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b641ff6a59f2a4a97217ca92de3357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_2
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2323
+        width: 40
+        height: 32
+      alignment: 9
+      pivot: {x: 0.275, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be9ae1c3a215b144a9cc46253f3b0e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2311
+        width: 32
+        height: 44
+      alignment: 9
+      pivot: {x: 0.125, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e3c63548f6eff4b903697ce8fc4648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 2306
+        width: 32
+        height: 44
+      alignment: 9
+      pivot: {x: 0.15625, y: 0.65909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9d826b4da72ae4eb6eee55d08ab107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_5
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 2306
+        width: 44
+        height: 44
+      alignment: 9
+      pivot: {x: 0.36363637, y: 0.65909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0939a1ef65e728e469044837badb1cd5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 2308
+        width: 32
+        height: 44
+      alignment: 9
+      pivot: {x: 0.625, y: 0.6136364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f0058fff3b4b74bba7020c733ab9e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 2323
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36301eb3a528d847b84a8ed4de2726f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_8
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 2323
+        width: 44
+        height: 32
+      alignment: 9
+      pivot: {x: 0.45454547, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98665ac34892bb24e9b446707b96d0f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_9
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 2323
+        width: 36
+        height: 32
+      alignment: 9
+      pivot: {x: 0.22222222, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cb540cf17261e44aa9b899192e67d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_10
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 2316
+        width: 36
+        height: 32
+      alignment: 9
+      pivot: {x: 0.22222222, y: 0.59375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312f87c07abc7284caf4cab256ce6c7f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2311
+        width: 36
+        height: 36
+      alignment: 9
+      pivot: {x: 0.19444445, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942db62f702ff3a45af839772060a44f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_SpinSlash_12
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 2311
+        width: 20
+        height: 36
+      alignment: 9
+      pivot: {x: 0.3, y: 0.6666667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2e7777e7e9a5f46b6f7d39cd4a1180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_0
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 586
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b243cdca053024cbe69283a8b788d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48e8315456bdf1f43a47d010b8096939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_2
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a4b64bb730a1241bf6d54b174fceb6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_3
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c391c1fd6ace07c4a8fa487e1bfd5570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5e01edfa986c24ba6343b12547631e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_5
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050a85e9c2a99e04c9d9d4d3539ca4fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_6
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11431bd705d5afe41b39b116d8e20fad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 586
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92f52921f05639c44abaaffadc339865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_8
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 587
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69a4a59809900e46a2ce826f9d59045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_9
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 587
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125f55cb0bec8e24fa97be55edc986af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_10
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 587
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f25094f7181a214aa42df614ca2739e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_11
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 585
+        width: 28
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac7e82b8ba5c084f9a037efaf6de4d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Link_Death_12
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 585
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b0ebc8d1cb4154c972eb143bea3913
       vertices: []
       indices: 
       edges: []

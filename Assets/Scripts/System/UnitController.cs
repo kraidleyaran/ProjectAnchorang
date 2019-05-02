@@ -65,7 +65,7 @@ public class UnitController : MonoBehaviour
         {
             var aura = currentAuras[0];
             _currentAuras.Remove(aura);
-            Destroy(aura.gameObject);
+            aura.Destroy();
         }
     }
 
@@ -75,6 +75,7 @@ public class UnitController : MonoBehaviour
         if (auraController)
         {
             _currentAuras.Remove(auraController);
+            Destroy(auraController);
             Destroy(auraController.gameObject);
         }
     }

@@ -14,11 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Throw Anchorang
   Aura:
-  - {fileID: 11400000, guid: 01ba5e0984c285f4ab01a4f45d5cf76b, type: 2}
-  - {fileID: 11400000, guid: 0052b4eaf4dabf14da7964b186e93e09, type: 2}
-  - {fileID: 11400000, guid: a7cde8df16cc89a4eb6a7c6f44610c8a, type: 2}
-  - {fileID: 11400000, guid: b70908af898e5ea4caa7ed55276fd9a6, type: 2}
-  - {fileID: 11400000, guid: 498dd93c59379c546aa91cda0ad4b954, type: 2}
-  - {fileID: 11400000, guid: 4cd35fc62b8f08e42b2ede2becf1c842, type: 2}
-  - {fileID: 11400000, guid: f2166cc1764081042ab4e17fa00db49f, type: 2}
-  - {fileID: 11400000, guid: 7df2b711a6814104a8f1d818571d2b7f, type: 2}
+  - {fileID: 11400000, guid: ce35fd9d196911b419940428e40abc4b, type: 2}
